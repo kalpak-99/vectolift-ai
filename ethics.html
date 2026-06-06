@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AI Ethics — Vectolift</title>
+<meta name="description" content="Our AI Ethics commitment. Learn how Vectolift ensures responsible, transparent, and fair use of artificial intelligence in voice communication.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png?v=2">
+<link rel="shortcut icon" href="favicon_io/favicon.ico?v=2">
+<link rel="manifest" href="/manifest.json?v=2">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+    .material-symbols-outlined { font-family:'Material Symbols Outlined'; font-weight:normal; font-style:normal; font-size:24px; line-height:1; letter-spacing:normal; text-transform:none; display:inline-block; white-space:nowrap; word-wrap:normal; direction:ltr; -webkit-font-feature-settings:'liga'; -webkit-font-smoothing:antialiased; }
+    html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+</style>
+<script>
+    tailwind.config = { darkMode:"class", theme:{ extend:{
+        "colors":{"tertiary-container":"#a76500","on-error":"#ffffff","on-secondary-fixed":"#121c2a","secondary-fixed-dim":"#bdc7d9","on-surface-variant":"#494454","on-secondary-container":"#596373","surface-container-high":"#ececec","primary-fixed-dim":"#d0bcff","surface-variant":"#e8e8ed","on-primary":"#ffffff","error-container":"#ffdad6","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#ffb869","surface-container-highest":"#e0e0e0","inverse-surface":"#1d1d1f","secondary":"#6e6e73","on-secondary-fixed-variant":"#3d4756","on-secondary":"#ffffff","on-background":"#1d1d1f","tertiary":"#855000","inverse-primary":"#d0bcff","surface-container":"#f0f0f0","primary-fixed":"#ede7fb","surface-dim":"#d3d3d3","surface":"#f5f5f7","on-tertiary-fixed-variant":"#673d00","primary":"#6b38d4","on-error-container":"#93000a","inverse-on-surface":"#f5f5f7","background":"#f5f5f7","on-tertiary-container":"#fffbff","on-primary-fixed":"#23005c","surface-container-low":"#fafafa","surface-bright":"#f5f5f7","outline":"#86868b","on-surface":"#1d1d1f","secondary-fixed":"#d9e3f6","on-primary-fixed-variant":"#5516be","surface-tint":"#6d3bd7","tertiary-fixed":"#ffdcbb","error":"#ba1a1a","on-tertiary-fixed":"#2c1700","on-tertiary":"#ffffff","on-primary-container":"#fffbff","primary-container":"#8455ef","outline-variant":"#d2d2d7","secondary-container":"#d6e0f3"},
+        "borderRadius":{"DEFAULT":"0.75rem","lg":"1rem","xl":"1.25rem","2xl":"1.5rem","full":"9999px"},
+        "spacing":{"margin-mobile":"24px","gutter":"24px","margin-desktop":"80px","container-max-width":"1280px","unit":"4px"},
+        "fontFamily":{"body-lg":["Inter","sans-serif"],"label-md":["Geist","sans-serif"],"headline-lg-mobile":["Geist","sans-serif"],"body-md":["Inter","sans-serif"],"headline-md":["Geist","sans-serif"],"display-lg":["Geist","sans-serif"],"headline-lg":["Geist","sans-serif"]},
+        "fontSize":{"body-lg":["18px",{"lineHeight":"1.6","letterSpacing":"0em","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"1.0","letterSpacing":"0.04em","fontWeight":"500"}],"headline-lg-mobile":["36px",{"lineHeight":"1.15","letterSpacing":"-0.025em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.6","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"1.3","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["64px",{"lineHeight":"1.05","letterSpacing":"-0.045em","fontWeight":"700"}],"headline-lg":["44px",{"lineHeight":"1.15","letterSpacing":"-0.025em","fontWeight":"700"}]}
+    }}}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden min-h-screen flex flex-col">
+
+<!-- Navbar -->
+<nav class="bg-white/70 fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-outline-variant/50 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+<a class="flex items-center gap-3" href="index.html"><img alt="Vectolift Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp05cg53LUv1eYs8Pg7DpH2s32uMFzIk_yHnT2coXCpFNVlCXqShntU4irkwSSM4EvRDgdWpcf71T7z3xmWlzLgu5x2ZYtuf2UdxAZa2R8_7McPAFPKuzX-wOZPB3nEGlFbyglgHUH_LEs6AHZAMNjbf8cgASdUjoXpV7vqiIWPZVZ_JoFFxlT4uhs_NPfWzpDDNpZMUhRxasX1jG4RUMJcL7cluHtvMij1_Qjvj3ZX3PZDYhdd0-lrvcNJaqZdO2GR3L8BZXXjLLa"><span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Vectolift</span></a>
+<a class="text-secondary font-medium hover:text-on-surface transition-colors duration-300 font-label-md text-label-md flex items-center gap-1" href="index.html"><span class="material-symbols-outlined text-[18px]">arrow_back</span> Back to Home</a>
+</div>
+</nav>
+
+<!-- Main Content -->
+<main class="flex-1 pt-32 pb-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[800px] mx-auto bg-white rounded-3xl border border-outline-variant/50 p-8 md:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+    <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 bg-primary-fixed rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary">psychology</span>
+        </div>
+        <p class="font-label-md text-label-md text-primary uppercase tracking-widest">Our Commitment</p>
+    </div>
+    <h1 class="font-headline-lg-mobile text-[32px] md:text-[40px] font-bold text-on-surface mb-2 leading-tight">AI Ethics</h1>
+    <p class="text-secondary font-label-md text-[13px] mb-8">Last updated: June 6, 2026</p>
+    
+    <div class="space-y-6 text-secondary leading-relaxed text-[15px]">
+        <p>At Vectolift, we believe that artificial intelligence should empower businesses while upholding the highest standards of ethics, transparency, and accountability. Our AI receptionist technology is designed to serve people — not replace human judgment where it matters most.</p>
+        <p>This document outlines the principles, practices, and commitments that govern every aspect of how we build, deploy, and monitor our AI systems.</p>
+        
+        <hr class="border-outline-variant/60 my-6">
+
+        <!-- 1. Transparency & Disclosure -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">1. Transparency & Disclosure</h2>
+        <p>We believe that callers have the right to know they are speaking with an AI. Our systems are designed with the following transparency commitments:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>AI Identification:</strong> Our AI receptionist identifies itself as an AI-powered assistant at the beginning of interactions when required by applicable law or when requested by our clients. We provide our clients with full control over disclosure settings.</li>
+            <li><strong>No Deception:</strong> Vectolift AI is never designed to deceive callers into believing they are speaking with a human. While our voice technology is realistic and professional, we do not impersonate real individuals.</li>
+            <li><strong>Clear Capabilities:</strong> Our AI will communicate its capabilities and limitations honestly. If the AI cannot assist with a request, it will escalate to a human operator or provide alternative contact methods.</li>
+        </ul>
+
+        <!-- 2. Data Privacy & Protection -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">2. Data Privacy & Protection</h2>
+        <p>Protecting the personal information of callers and our clients is fundamental to our operations:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Data Minimisation:</strong> We collect only the data necessary to provide our services. We do not collect or store information beyond what is required for call handling, transcription, and CRM integration.</li>
+            <li><strong>Encryption:</strong> All voice data, transcripts, and personal information are encrypted both in transit (TLS 1.3) and at rest (AES-256). Our infrastructure is hosted on enterprise-grade cloud providers with SOC 2 compliance.</li>
+            <li><strong>Retention Policies:</strong> Call recordings and transcripts are retained only for the period specified in our service agreement. Clients can request immediate deletion of their data at any time.</li>
+            <li><strong>No Third-Party Sale:</strong> We never sell, trade, or share personal data with third parties for marketing or advertising purposes. Data is shared only with authorised integrations (e.g., your CRM) as directed by the client.</li>
+            <li><strong>Compliance:</strong> We design our systems to comply with applicable privacy regulations including GDPR, CCPA, and other relevant data protection frameworks.</li>
+        </ul>
+
+        <!-- 3. Fairness & Non-Discrimination -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">3. Fairness & Non-Discrimination</h2>
+        <p>Our AI systems are built with fairness at their core:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Bias Testing:</strong> We regularly test our voice models and natural language processing systems for bias across demographics including accent, dialect, language patterns, gender, age, and cultural background.</li>
+            <li><strong>Equal Treatment:</strong> Our AI treats every caller with the same level of professionalism and respect, regardless of their background, accent, or manner of speaking.</li>
+            <li><strong>Inclusive Design:</strong> We continuously work to improve our system's ability to understand diverse accents, speech patterns, and communication styles to ensure accessibility for all callers.</li>
+            <li><strong>Regular Audits:</strong> We conduct periodic fairness audits of our AI systems and publish aggregated findings to maintain accountability.</li>
+        </ul>
+
+        <!-- 4. Human Oversight & Escalation -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">4. Human Oversight & Escalation</h2>
+        <p>AI should augment human capability, not replace human judgment in critical situations:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Emergency Protocols:</strong> Our AI is trained to recognise emergency situations and immediately route callers to appropriate emergency services or human operators. AI will never attempt to handle medical emergencies, threats to safety, or other urgent situations autonomously.</li>
+            <li><strong>Escalation Paths:</strong> Every call has a clear escalation path to a human operator. If the AI detects frustration, confusion, or repeated misunderstanding, it proactively offers to transfer the caller to a human team member.</li>
+            <li><strong>Client Control:</strong> Business owners retain full control over their AI agent's behaviour, including the ability to define custom escalation triggers, set operating hours, and override AI decisions at any time.</li>
+            <li><strong>No Autonomous Decisions:</strong> Our AI does not make binding business decisions. It collects information, schedules appointments, and routes calls — all actions that can be reviewed and amended by humans.</li>
+        </ul>
+
+        <!-- 5. Voice Cloning & Synthetic Speech -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">5. Voice Cloning & Synthetic Speech</h2>
+        <p>We take the ethical use of voice synthesis technology seriously:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Consent-Based Voices:</strong> All voice models used by Vectolift are created from consenting voice actors or are generated synthetically without being based on any specific individual's voice.</li>
+            <li><strong>No Impersonation:</strong> We prohibit the use of our technology to clone or impersonate any real person's voice without their explicit, documented consent.</li>
+            <li><strong>Watermarking:</strong> We are developing audio watermarking technology to allow AI-generated speech to be identified as synthetic when analysed, contributing to the broader fight against deepfake misuse.</li>
+        </ul>
+
+        <!-- 6. Accountability & Governance -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">6. Accountability & Governance</h2>
+        <p>We maintain robust governance structures to ensure ethical AI development:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Ethics Review Board:</strong> An internal ethics review board evaluates new features, model updates, and deployment scenarios for potential ethical concerns before release.</li>
+            <li><strong>Incident Response:</strong> We maintain a dedicated incident response protocol for AI-related issues, including bias incidents, data breaches, or misuse of our technology.</li>
+            <li><strong>Feedback Channels:</strong> We provide clear channels for callers, clients, and the public to report ethical concerns about our AI systems. All reports are investigated and addressed.</li>
+            <li><strong>Continuous Improvement:</strong> We commit to regularly updating our ethical guidelines as technology evolves, industry standards develop, and new research becomes available.</li>
+        </ul>
+
+        <!-- 7. Responsible Use -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">7. Responsible Use Policy</h2>
+        <p>We require all clients to use Vectolift technology responsibly:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Prohibited Uses:</strong> Our technology may not be used for robocalling, spam, harassment, fraud, impersonation of law enforcement or government officials, or any activity that violates applicable laws.</li>
+            <li><strong>Industry Restrictions:</strong> We reserve the right to decline service to organisations whose intended use of our technology conflicts with our ethical principles or poses risk of harm.</li>
+            <li><strong>Monitoring:</strong> We employ usage monitoring to detect and prevent misuse of our platform, including unusual call volumes, patterns indicative of spam, or other signs of policy violations.</li>
+            <li><strong>Termination:</strong> We reserve the right to immediately suspend or terminate service for any client found to be using our technology in violation of this policy.</li>
+        </ul>
+
+        <!-- 8. Environmental Responsibility -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">8. Environmental Responsibility</h2>
+        <p>We are mindful of the environmental impact of AI systems:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Efficient Models:</strong> We optimise our AI models for efficiency, reducing computational requirements and energy consumption without sacrificing quality.</li>
+            <li><strong>Green Infrastructure:</strong> We prioritise cloud providers that use renewable energy and have committed to carbon-neutral operations.</li>
+            <li><strong>Edge Computing:</strong> Our proprietary edge-routing technology processes data closer to the user, reducing network latency and the environmental footprint of data transmission.</li>
+        </ul>
+
+        <!-- 9. Children & Vulnerable Persons -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">9. Children & Vulnerable Persons</h2>
+        <p>We implement additional safeguards for interactions involving vulnerable individuals:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Age Awareness:</strong> Our AI does not knowingly collect personal information from children under the age of 16. If we become aware that a caller is a minor, the system prioritises connecting them with a human operator.</li>
+            <li><strong>Sensitive Situations:</strong> Our AI is designed to recognise distressed callers and prioritise empathy, patience, and human escalation in sensitive situations.</li>
+        </ul>
+
+        <!-- 10. Contact -->
+        <h2 class="font-headline-md text-[20px] font-semibold text-on-surface">10. Contact & Reporting</h2>
+        <p>If you have questions, concerns, or wish to report an ethical issue related to our AI systems, please contact us:</p>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Email:</strong> <span class="text-on-surface font-medium">contact@vectolift.com</span></li>
+            <li><strong>General Enquiries:</strong> <span class="text-on-surface font-medium">team@vectolift.com</span></li>
+        </ul>
+        <p class="mt-4">We take every report seriously and will respond within 5 business days.</p>
+
+        <hr class="border-outline-variant/60 my-6">
+        <p class="text-[13px] text-secondary/70 italic">This AI Ethics policy is a living document and will be updated as our technology and the regulatory landscape evolves. We encourage all stakeholders to review this policy periodically.</p>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-16 px-margin-mobile md:px-margin-desktop border-t border-outline-variant/50">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div><a class="flex items-center gap-2 mb-4" href="index.html"><img alt="Vectolift Logo" class="h-6 w-6 object-contain grayscale opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp05cg53LUv1eYs8Pg7DpH2s32uMFzIk_yHnT2coXCpFNVlCXqShntU4irkwSSM4EvRDgdWpcf71T7z3xmWlzLgu5x2ZYtuf2UdxAZa2R8_7McPAFPKuzX-wOZPB3nEGlFbyglgHUH_LEs6AHZAMNjbf8cgASdUjoXpV7vqiIWPZVZ_JoFFxlT4uhs_NPfWzpDDNpZMUhRxasX1jG4RUMJcL7cluHtvMij1_Qjvj3ZX3PZDYhdd0-lrvcNJaqZdO2GR3L8BZXXjLLa"><span class="font-headline-md text-headline-md font-bold text-on-surface">Vectolift</span></a><p class="font-body-md text-body-md text-secondary">© 2024 Vectolift. Business AI Solutions.</p></div>
+<div class="flex flex-wrap md:justify-end gap-6 md:gap-8">
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300" href="privacy.html">Privacy Policy</a>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300" href="terms.html">Terms of Service</a>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300 text-primary font-semibold" href="ethics.html">AI Ethics</a>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300" href="blog.html">Blog</a>
+</div></div>
+</footer>
+
+</body></html>

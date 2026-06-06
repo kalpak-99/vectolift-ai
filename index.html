@@ -1,0 +1,638 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Vectolift - Your 24/7 AI-powered receptionist</title>
+<meta name="description" content="Capture every inbound opportunity while you sleep. Human-grade voice AI that answers every call, 24/7, with a native voice.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png?v=2">
+<link rel="shortcut icon" href="favicon_io/favicon.ico?v=2">
+<link rel="manifest" href="manifest.json?v=3" />
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+    .material-symbols-outlined { font-family:'Material Symbols Outlined'; font-weight:normal; font-style:normal; font-size:24px; line-height:1; letter-spacing:normal; text-transform:none; display:inline-block; white-space:nowrap; word-wrap:normal; direction:ltr; -webkit-font-feature-settings:'liga'; -webkit-font-smoothing:antialiased; }
+    html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    .card-hover { transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .card-hover:hover { box-shadow:0 12px 40px -8px rgba(0,0,0,0.08); transform:translateY(-4px); }
+    .pulse-glow { animation:pulseGlow 2s infinite; }
+    @keyframes pulseGlow { 0%{box-shadow:0 0 0 0 rgba(107,56,212,0.3)} 70%{box-shadow:0 0 0 10px rgba(107,56,212,0)} 100%{box-shadow:0 0 0 0 rgba(107,56,212,0)} }
+    .reveal { opacity:0; transform:translateY(40px); transition:opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .btn-glow:hover { box-shadow:0 8px 30px -4px rgba(107,56,212,0.3); }
+
+
+
+    /* Flow Styles */
+    .flow-wrapper { position:relative; max-width:1100px; margin:0 auto; padding:48px 0; }
+    .flow-sequence { display:flex; align-items:center; justify-content:center; gap:0; }
+    .flow-connector { flex:0 0 48px; height:2px; background:#e2e8f8; position:relative; overflow:hidden; }
+    .flow-connector-fill { position:absolute; top:0; left:0; width:0%; height:100%; background:#6b38d4; }
+    .flow-node { flex:0 0 200px; background:#ffffff; border:1px solid #cbc3d7; border-radius:12px; padding:24px; text-align:center; transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease; opacity:0; transform:scale(0.85) translateY(16px); }
+    .flow-node.visible { opacity:1; transform:scale(1) translateY(0); }
+    .flow-node:hover { box-shadow:0 10px 20px -5px rgba(21,28,39,0.08); transform:translateY(-2px); }
+    .flow-node-active { border-color:#6b38d4; box-shadow:0 0 20px rgba(107,56,212,0.12); transform:scale(1.03) translateY(-2px) !important; }
+    .flow-node-icon { width:64px; height:64px; background:#f9f9ff; border:1px solid #cbc3d7; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; transition:background-color 0.4s, border-color 0.4s; }
+    .flow-node-icon .material-symbols-outlined { color:#555f6f; transition:color 0.4s; }
+    
+    /* When active, make icon background gradient and icon white */
+    .flow-node-active .flow-node-icon { background:linear-gradient(135deg, #6b38d4, #8455ef); border-color:#6b38d4; }
+    .flow-node-active .flow-node-icon .material-symbols-outlined { color:#ffffff; }
+    
+    .flow-node-title { font-family:'Geist', sans-serif; font-size:14px; font-weight:500; letter-spacing:0.05em; color:#151c27; margin-bottom:8px; }
+    .flow-node-desc { font-size:13px; line-height:1.5; color:#555f6f; opacity:0.6; transition:opacity 0.4s; }
+    .flow-node-active .flow-node-desc { opacity:1; }
+
+    @media (max-width:768px) {
+        .flow-sequence { flex-direction:column; }
+        .flow-connector { flex:0 0 32px; width:2px; height:32px; }
+        .flow-connector-fill { width:100% !important; height:0%; }
+        .flow-node { flex:0 0 auto; width:100%; max-width:320px; }
+    }
+
+    /* Calculator */
+    .calc-slider { -webkit-appearance:none; appearance:none; width:100%; height:8px; background:rgba(255,255,255,0.25); border-radius:999px; outline:none; cursor:pointer; }
+    .calc-slider::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:28px; height:28px; border-radius:50%; background:#fff; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.2); border:3px solid rgba(107,56,212,0.3); transition:transform 0.2s ease; }
+    .calc-slider::-webkit-slider-thumb:hover { transform:scale(1.15); }
+    .calc-slider::-moz-range-thumb { width:28px; height:28px; border-radius:50%; background:#fff; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.2); border:3px solid rgba(107,56,212,0.3); }
+    .calc-value { transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
+
+    /* Countdown Timer */
+    .countdown-wrapper { display:flex; gap:12px; justify-content:center; margin-bottom:32px; }
+    .countdown-unit { display:flex; flex-direction:column; align-items:center; min-width:72px; }
+    .countdown-value { font-family:'Geist',sans-serif; font-size:40px; font-weight:700; color:#1d1d1f; line-height:1; background:linear-gradient(135deg, #6b38d4 0%, #8455ef 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .countdown-label { font-family:'Geist',sans-serif; font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:#6e6e73; margin-top:4px; }
+    .countdown-separator { font-family:'Geist',sans-serif; font-size:36px; font-weight:300; color:#d2d2d7; line-height:1; padding-top:2px; }
+    @media (max-width:480px) {
+        .countdown-value { font-size:28px; }
+        .countdown-unit { min-width:56px; }
+        .countdown-separator { font-size:24px; }
+    }
+    .urgency-pulse { animation: urgencyPulse 2s ease-in-out infinite; }
+    @keyframes urgencyPulse { 0%,100%{ opacity:1; } 50%{ opacity:0.6; } }
+
+    /* Modal Overlay */
+    .modal-overlay { position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.3s ease; }
+    .modal-overlay.active { opacity:1; pointer-events:auto; }
+    .modal-content { background:#fff; border-radius:20px; max-width:520px; width:90%; padding:40px 36px; box-shadow:0 24px 80px rgba(0,0,0,0.18); transform:translateY(24px) scale(0.96); transition:transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.3s ease; opacity:0; }
+    .modal-overlay.active .modal-content { transform:translateY(0) scale(1); opacity:1; }
+    .modal-close { position:absolute; top:16px; right:16px; background:none; border:none; cursor:pointer; color:#6e6e73; font-size:24px; padding:4px; border-radius:50%; transition:background 0.2s, color 0.2s; }
+    .modal-close:hover { background:#f0f0f0; color:#1d1d1f; }
+
+
+</style>
+<script id="tailwind-config">
+    tailwind.config = { darkMode:"class", theme:{ extend:{
+        "colors":{"tertiary-container":"#a76500","on-error":"#ffffff","on-secondary-fixed":"#121c2a","secondary-fixed-dim":"#bdc7d9","on-surface-variant":"#494454","on-secondary-container":"#596373","surface-container-high":"#ececec","primary-fixed-dim":"#d0bcff","surface-variant":"#e8e8ed","on-primary":"#ffffff","error-container":"#ffdad6","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#ffb869","surface-container-highest":"#e0e0e0","inverse-surface":"#1d1d1f","secondary":"#6e6e73","on-secondary-fixed-variant":"#3d4756","on-secondary":"#ffffff","on-background":"#1d1d1f","tertiary":"#855000","inverse-primary":"#d0bcff","surface-container":"#f0f0f0","primary-fixed":"#ede7fb","surface-dim":"#d3d3d3","surface":"#f5f5f7","on-tertiary-fixed-variant":"#673d00","primary":"#6b38d4","on-error-container":"#93000a","inverse-on-surface":"#f5f5f7","background":"#f5f5f7","on-tertiary-container":"#fffbff","on-primary-fixed":"#23005c","surface-container-low":"#fafafa","surface-bright":"#f5f5f7","outline":"#86868b","on-surface":"#1d1d1f","secondary-fixed":"#d9e3f6","on-primary-fixed-variant":"#5516be","surface-tint":"#6d3bd7","tertiary-fixed":"#ffdcbb","error":"#ba1a1a","on-tertiary-fixed":"#2c1700","on-tertiary":"#ffffff","on-primary-container":"#fffbff","primary-container":"#8455ef","outline-variant":"#d2d2d7","secondary-container":"#d6e0f3"},
+        "borderRadius":{"DEFAULT":"0.75rem","lg":"1rem","xl":"1.25rem","2xl":"1.5rem","full":"9999px"},
+        "spacing":{"margin-mobile":"24px","gutter":"24px","margin-desktop":"80px","container-max-width":"1280px","unit":"4px"},
+        "fontFamily":{"body-lg":["Inter","sans-serif"],"label-md":["Geist","sans-serif"],"headline-lg-mobile":["Geist","sans-serif"],"body-md":["Inter","sans-serif"],"headline-md":["Geist","sans-serif"],"display-lg":["Geist","sans-serif"],"headline-lg":["Geist","sans-serif"]},
+        "fontSize":{"body-lg":["18px",{"lineHeight":"1.6","letterSpacing":"0em","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"1.0","letterSpacing":"0.04em","fontWeight":"500"}],"headline-lg-mobile":["36px",{"lineHeight":"1.15","letterSpacing":"-0.025em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.6","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"1.3","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["64px",{"lineHeight":"1.05","letterSpacing":"-0.045em","fontWeight":"700"}],"headline-lg":["44px",{"lineHeight":"1.15","letterSpacing":"-0.025em","fontWeight":"700"}]}
+    }}}
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden min-h-screen">
+
+<!-- Navbar -->
+<nav class="bg-white/70 fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-outline-variant/50 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+<a class="flex items-center gap-3" href="#"><img alt="Vectolift Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp05cg53LUv1eYs8Pg7DpH2s32uMFzIk_yHnT2coXCpFNVlCXqShntU4irkwSSM4EvRDgdWpcf71T7z3xmWlzLgu5x2ZYtuf2UdxAZa2R8_7McPAFPKuzX-wOZPB3nEGlFbyglgHUH_LEs6AHZAMNjbf8cgASdUjoXpV7vqiIWPZVZ_JoFFxlT4uhs_NPfWzpDDNpZMUhRxasX1jG4RUMJcL7cluHtvMij1_Qjvj3ZX3PZDYhdd0-lrvcNJaqZdO2GR3L8BZXXjLLa"><span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Vectolift</span></a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-medium hover:text-on-surface transition-colors duration-300 font-label-md text-label-md" href="#technology">Technology</a>
+<a class="text-secondary font-medium hover:text-on-surface transition-colors duration-300 font-label-md text-label-md" href="#benefits">Benefits</a>
+<a class="text-secondary font-medium hover:text-on-surface transition-colors duration-300 font-label-md text-label-md" href="#calculator">Calculator</a>
+<a class="text-secondary font-medium hover:text-on-surface transition-colors duration-300 font-label-md text-label-md" href="#trial">Trial</a>
+
+</div>
+<button class="hidden md:inline-flex bg-on-surface text-surface-container-lowest font-label-md text-label-md px-6 py-3 rounded-2xl hover:opacity-90 transition-all duration-300 btn-glow open-modal-btn">Reserve Your Agent</button>
+<button class="md:hidden text-on-surface" id="mobileMenuBtn"><span class="material-symbols-outlined">menu</span></button>
+</div>
+<div class="hidden md:hidden flex-col px-margin-mobile pb-4 gap-2 border-t border-outline-variant/50" id="mobileMenu">
+<a class="block py-3 text-secondary hover:text-on-surface font-label-md text-label-md" href="#technology">Technology</a>
+<a class="block py-3 text-secondary hover:text-on-surface font-label-md text-label-md" href="#benefits">Benefits</a>
+<a class="block py-3 text-secondary hover:text-on-surface font-label-md text-label-md" href="#calculator">Calculator</a>
+<a class="block py-3 text-secondary hover:text-on-surface font-label-md text-label-md" href="#trial">Trial</a>
+<button class="bg-on-surface text-surface-container-lowest font-label-md text-label-md px-6 py-3 rounded-2xl mt-2 open-modal-btn">Reserve Your Agent</button>
+</div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<header class="pt-28 pb-8 md:pt-36 md:pb-16 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+<!-- Left: Text & Lead Form -->
+<div class="flex flex-col justify-center items-start z-10 order-2 md:order-1 self-center">
+    <h1 class="reveal font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-4 leading-tight">
+        Never miss<br>another call.
+    </h1>
+    <p class="reveal font-body-lg text-body-lg text-secondary mb-8 max-w-md">
+        Your AI receptionist answers every call, 24/7, with a native voice.
+    </p>
+    <div class="reveal flex flex-col sm:flex-row gap-4">
+        <button class="bg-on-surface text-surface-container-lowest font-label-md text-label-md px-8 py-4 rounded-2xl hover:opacity-90 transition-all duration-300 btn-glow open-modal-btn flex items-center gap-2">
+            Reserve Your Agent <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+        <a href="#technology" class="border border-outline-variant text-on-surface font-label-md text-label-md px-8 py-4 rounded-2xl hover:bg-surface-container-high transition-all duration-300 text-center">
+            See How It Works
+        </a>
+    </div>
+</div>
+
+<!-- Right: Illustration -->
+<div class="reveal flex justify-center items-center order-1 md:order-2 py-10 md:py-0" style="transition-delay: 0.2s;">
+    <img src="hero-illustration.png" alt="Vectolift AI Voice Assistant Illustration" 
+         class="w-full h-auto object-contain max-w-[480px] md:max-w-[550px] lg:max-w-[620px] max-h-[500px] md:max-h-[580px]" 
+         style="mix-blend-mode: multiply; pointer-events: none; user-select: none; -webkit-user-drag: none;">
+</div>
+</header>
+
+<!-- Benefits -->
+<section class="py-28 bg-surface-container-lowest border-y border-outline-variant/50" id="benefits">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="reveal text-center max-w-2xl mx-auto mb-20">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-5">AI That Sounds Like Your Best Employee.</h2>
+<p class="font-body-lg text-body-lg text-secondary">Power your phones with an ultra-low latency, native voice assistant that handles calls and updates your CRM instantly.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="reveal bg-surface p-10 rounded-2xl border border-outline-variant/50 card-hover flex flex-col justify-between min-h-[320px]"><div><div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-primary">record_voice_over</span></div><h3 class="font-headline-md text-headline-md text-on-surface mb-3">100% Native Accent</h3><p class="font-body-md text-body-md text-secondary">Trained exclusively on high-fidelity audio. Indistinguishable from a professional executive assistant.</p></div></div>
+<div class="reveal bg-surface p-10 rounded-2xl border border-outline-variant/50 card-hover flex flex-col justify-between min-h-[320px]" style="transition-delay:0.1s"><div><div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-primary">sync</span></div><h3 class="font-headline-md text-headline-md text-on-surface mb-3">Instant CRM Sync</h3><p class="font-body-md text-body-md text-secondary">Call transcripts, action items, and booking data flow seamlessly into Salesforce, HubSpot, or your bespoke systems instantly.</p></div></div>
+<div class="reveal bg-surface p-10 rounded-2xl border border-outline-variant/50 card-hover flex flex-col justify-between min-h-[320px]" style="transition-delay:0.2s"><div><div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-primary">speed</span></div><h3 class="font-headline-md text-headline-md text-on-surface mb-3">Zero Latency</h3><p class="font-body-md text-body-md text-secondary">Proprietary edge-routing ensures conversational response times under 400ms, maintaining the natural cadence of a human dialogue.</p></div></div>
+</div></div>
+</section>
+
+<!-- Tech Flow -->
+<section class="py-24 md:py-32 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto" id="technology">
+<div class="reveal text-center mb-16 md:mb-20">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-5">The Science of Connection.</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">An elegant, invisible infrastructure working relentlessly behind the scenes.</p>
+</div>
+<div class="flow-wrapper" id="flow-wrapper">
+    <div class="flow-sequence">
+        <div class="flow-node">
+            <div class="flow-node-icon">
+                <span class="material-symbols-outlined">phone_in_talk</span>
+            </div>
+            <h4 class="flow-node-title">Inbound Call</h4>
+            <p class="flow-node-desc">Customer rings your dedicated or forwarded number.</p>
+        </div>
+        <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+        <div class="flow-node">
+            <div class="flow-node-icon">
+                <span class="material-symbols-outlined">graphic_eq</span>
+            </div>
+            <h4 class="flow-node-title">Vectolift AI</h4>
+            <p class="flow-node-desc">Answers instantly, processes intent via natural dialogue.</p>
+        </div>
+        <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+        <div class="flow-node">
+            <div class="flow-node-icon">
+                <span class="material-symbols-outlined">bolt</span>
+            </div>
+            <h4 class="flow-node-title">Action Taken</h4>
+            <p class="flow-node-desc">Books meeting, qualifies lead, or routes emergency.</p>
+        </div>
+        <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+        <div class="flow-node">
+            <div class="flow-node-icon">
+                <span class="material-symbols-outlined">database</span>
+            </div>
+            <h4 class="flow-node-title">CRM Sync</h4>
+            <p class="flow-node-desc">Structured data logged instantly to your platform.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Calculator -->
+<section class="py-14 md:py-16 bg-surface-container-lowest border-y border-outline-variant/50" id="calculator">
+<div class="max-w-[900px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="reveal text-center mb-8"><h2 class="font-headline-lg-mobile text-[28px] md:text-[36px] font-bold text-on-surface mb-2 leading-tight">See how much revenue you're losing to missed calls</h2></div>
+<div class="reveal bg-surface-container-lowest rounded-2xl border border-outline-variant/50 shadow-[0_8px_40px_rgba(0,0,0,0.06)] overflow-hidden">
+<div class="bg-gradient-to-br from-primary via-primary-container to-primary p-6 md:p-8">
+<h3 class="text-white font-headline-md text-[18px] md:text-[20px] font-semibold mb-6">How many calls do you miss per day?</h3>
+<input type="range" min="1" max="50" value="15" class="calc-slider w-full mb-3" id="callSlider">
+<div class="flex justify-between text-white/80 text-[13px] font-label-md"><span>1 call</span><span class="text-white font-semibold text-[15px]" id="sliderValue">15 calls/day</span><span>50 calls</span></div>
+</div>
+<div class="p-6 md:p-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="bg-surface rounded-2xl border border-outline-variant/40 p-5 text-left"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-primary text-[18px]">attach_money</span><span class="font-label-md text-[13px] text-secondary">Monthly Loss</span></div><div class="calc-value font-headline-lg text-[28px] md:text-[32px] font-bold text-on-surface tracking-tight leading-none mb-1" id="monthlyLoss">$20,250</div><span class="text-[12px] text-secondary">in missed revenue</span></div>
+<div class="bg-surface rounded-2xl border border-outline-variant/40 p-5 text-left"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span><span class="font-label-md text-[13px] text-secondary">Yearly Impact</span></div><div class="calc-value font-headline-lg text-[28px] md:text-[32px] font-bold text-on-surface tracking-tight leading-none mb-1" id="yearlyImpact">$243,000</div><span class="text-[12px] text-secondary">annual revenue at risk</span></div>
+<div class="bg-surface rounded-2xl border border-outline-variant/40 p-5 text-left"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span><span class="font-label-md text-[13px] text-secondary">After-Hours</span></div><div class="calc-value font-headline-lg text-[28px] md:text-[32px] font-bold text-on-surface tracking-tight leading-none mb-1" id="afterHours">$7,088</div><span class="text-[12px] text-secondary">monthly after-hours loss</span></div>
+</div>
+<div class="bg-primary-fixed/40 rounded-2xl py-3 px-5 text-center"><p class="text-[14px] text-on-surface"><strong class="font-semibold">Vectolift captures 100% of these calls</strong> — turning missed opportunities into confirmed revenue</p></div>
+</div>
+<div class="px-6 md:px-8 pb-5"><p class="text-[11px] text-secondary/60 text-center italic">* Based on $150 average call value and 30% conversion rate</p></div>
+</div></div>
+</section>
+
+<!-- Trial -->
+<section class="py-28 bg-surface border-t border-outline-variant/50" id="trial">
+<div class="max-w-[800px] mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="reveal"><h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-6">Pre-Booking — Launching Soon</h2><p class="font-body-lg text-body-lg text-secondary mb-4">Reserve your AI agent before the launch window closes.</p></div>
+<div class="reveal bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-8 md:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-6 urgency-pulse">Offer ends in</p>
+<div class="countdown-wrapper" id="countdownTimer">
+    <div class="countdown-unit"><span class="countdown-value" id="cd-days">07</span><span class="countdown-label">Days</span></div>
+    <span class="countdown-separator">:</span>
+    <div class="countdown-unit"><span class="countdown-value" id="cd-hours">00</span><span class="countdown-label">Hours</span></div>
+    <span class="countdown-separator">:</span>
+    <div class="countdown-unit"><span class="countdown-value" id="cd-minutes">00</span><span class="countdown-label">Minutes</span></div>
+    <span class="countdown-separator">:</span>
+    <div class="countdown-unit"><span class="countdown-value" id="cd-seconds">00</span><span class="countdown-label">Seconds</span></div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center"><button class="bg-on-surface text-surface-container-lowest font-label-md text-label-md px-8 py-4 rounded-2xl hover:opacity-90 transition-all duration-300 whitespace-nowrap btn-glow open-modal-btn">Claim Your Agent</button></div>
+<p class="font-body-md text-[13px] text-secondary mt-5">No credit card required. 7-day full feature access.</p>
+</div></div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-16 px-margin-mobile md:px-margin-desktop border-t border-outline-variant/50">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div><a class="flex items-center gap-2 mb-4" href="#"><img alt="Vectolift Logo" class="h-6 w-6 object-contain grayscale opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp05cg53LUv1eYs8Pg7DpH2s32uMFzIk_yHnT2coXCpFNVlCXqShntU4irkwSSM4EvRDgdWpcf71T7z3xmWlzLgu5x2ZYtuf2UdxAZa2R8_7McPAFPKuzX-wOZPB3nEGlFbyglgHUH_LEs6AHZAMNjbf8cgASdUjoXpV7vqiIWPZVZ_JoFFxlT4uhs_NPfWzpDDNpZMUhRxasX1jG4RUMJcL7cluHtvMij1_Qjvj3ZX3PZDYhdd0-lrvcNJaqZdO2GR3L8BZXXjLLa"><span class="font-headline-md text-headline-md font-bold text-on-surface">Vectolift</span></a><p class="font-body-md text-body-md text-secondary">© 2024 Vectolift. Business AI Solutions.</p></div>
+<div class="flex flex-wrap md:justify-end gap-6 md:gap-8">
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300" href="privacy.html">Privacy Policy</a>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300" href="terms.html">Terms of Service</a>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300" href="ethics.html">AI Ethics</a>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors duration-300" href="blog.html">Blog</a>
+</div></div>
+</footer>
+
+<!-- Reservation Modal -->
+<div class="modal-overlay" id="reservationModal">
+    <div class="modal-content" style="position:relative;">
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <h3 style="font-family:'Geist',sans-serif; font-size:24px; font-weight:700; color:#1d1d1f; margin-bottom:6px;">Reserve Your AI Agent</h3>
+        <p style="font-size:14px; color:#6e6e73; margin-bottom:28px;">Fill in your details and we'll set up your 7-day trial.</p>
+        <form id="modalReservationForm" style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                <div>
+                    <label style="display:block; font-size:12px; font-weight:600; color:#6e6e73; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;" for="modalName">Your Name</label>
+                    <input type="text" id="modalName" required placeholder="John Doe" 
+                           style="width:100%; background:#fff; border:1px solid #d2d2d7; border-radius:12px; padding:12px 16px; font-size:15px; outline:none; transition:border-color 0.3s;" 
+                           onfocus="this.style.borderColor='#6b38d4'" onblur="this.style.borderColor='#d2d2d7'">
+                </div>
+                <div>
+                    <label style="display:block; font-size:12px; font-weight:600; color:#6e6e73; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;" for="modalBusiness">Business Name</label>
+                    <input type="text" id="modalBusiness" required placeholder="Acme Inc." 
+                           style="width:100%; background:#fff; border:1px solid #d2d2d7; border-radius:12px; padding:12px 16px; font-size:15px; outline:none; transition:border-color 0.3s;"
+                           onfocus="this.style.borderColor='#6b38d4'" onblur="this.style.borderColor='#d2d2d7'">
+                </div>
+            </div>
+            <div>
+                <label style="display:block; font-size:12px; font-weight:600; color:#6e6e73; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;" for="modalEmail">Work Email</label>
+                <input type="email" id="modalEmail" required placeholder="john@company.com" 
+                       style="width:100%; background:#fff; border:1px solid #d2d2d7; border-radius:12px; padding:12px 16px; font-size:15px; outline:none; transition:border-color 0.3s;"
+                       onfocus="this.style.borderColor='#6b38d4'" onblur="this.style.borderColor='#d2d2d7'">
+            </div>
+            <div>
+                <label style="display:block; font-size:12px; font-weight:600; color:#6e6e73; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;" for="modalPhone">Phone Number</label>
+                <input type="tel" id="modalPhone" required placeholder="+1 (555) 000-0000" 
+                       style="width:100%; background:#fff; border:1px solid #d2d2d7; border-radius:12px; padding:12px 16px; font-size:15px; outline:none; transition:border-color 0.3s;"
+                       onfocus="this.style.borderColor='#6b38d4'" onblur="this.style.borderColor='#d2d2d7'">
+            </div>
+            <button type="submit" style="width:100%; background:#1d1d1f; color:#fff; font-family:'Geist',sans-serif; font-size:14px; font-weight:500; letter-spacing:0.04em; padding:16px; border:none; border-radius:14px; cursor:pointer; transition:opacity 0.3s, box-shadow 0.3s; margin-top:4px;" 
+                    onmouseover="this.style.opacity='0.88'; this.style.boxShadow='0 8px 30px -4px rgba(107,56,212,0.3)'" 
+                    onmouseout="this.style.opacity='1'; this.style.boxShadow='none'">
+                Reserve Your 7-Day Trial
+            </button>
+        </form>
+        <p style="font-size:12px; color:#86868b; text-align:center; margin-top:16px;">No credit card required. 7-day full feature access.</p>
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu
+    const mmb=document.getElementById('mobileMenuBtn'),mm=document.getElementById('mobileMenu');
+    if(mmb&&mm){mmb.addEventListener('click',()=>{mm.style.display=mm.style.display==='flex'?'none':'flex';mmb.querySelector('.material-symbols-outlined').textContent=mm.style.display==='flex'?'close':'menu'});mm.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mm.style.display='none';mmb.querySelector('.material-symbols-outlined').textContent='menu'}))}
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-document.querySelector('nav').offsetHeight-20,behavior:'smooth'})})});
+
+    // Reveal
+    const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}}),{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+
+
+    // ===== FLOW INTERCONNECT ANIMATION & ACTIVE LOOP =====
+    ;(function() {
+        const wrapper = document.getElementById('flow-wrapper');
+        if (!wrapper) return;
+
+        const nodes = wrapper.querySelectorAll('.flow-node');
+        const fills = wrapper.querySelectorAll('.flow-connector-fill');
+        if (nodes.length === 0) return;
+
+        let hasPlayed = false;
+        const isMobile = () => window.innerWidth <= 768;
+
+        // IntersectionObserver — triggers entrance once on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasPlayed) {
+                    hasPlayed = true;
+                    observer.disconnect();
+                    playTimeline();
+                }
+            });
+        }, { threshold: isMobile() ? 0.15 : 0.4 });
+        observer.observe(wrapper);
+
+        // Sequential entrance: card 1 -> connector 1 -> card 2 -> connector 2 ...
+        function playTimeline() {
+            let delay = 0;
+            nodes.forEach((node, i) => {
+                setTimeout(() => {
+                    node.classList.add('visible');
+                }, delay);
+                delay += 500; // time between card entrance
+
+                if (fills[i]) {
+                    setTimeout(() => {
+                        const prop = isMobile() ? 'height' : 'width';
+                        fills[i].style.transition = prop + ' 400ms cubic-bezier(0.45, 0, 0.55, 1)';
+                        fills[i].style[prop] = '100%';
+                    }, delay);
+                    delay += 300; // time for line drawing
+                }
+            });
+
+            // After entrance finishes, start the active-state loop
+            setTimeout(() => {
+                startLoop();
+            }, delay + 500);
+        }
+
+        // Infinite active-state cycling with hover-pause + click-to-jump
+        let activeIndex = 0;
+        let isHovered = false;
+        let loopTimeout = null;
+        let animationStartTime = null;
+        const animationDuration = 3500; // 3.5 seconds per card
+        let elapsedBeforePause = 0;
+
+        function updateActiveState(index, remainingTime = animationDuration) {
+            clearTimeout(loopTimeout);
+            activeIndex = index;
+
+            // 1. Toggle active classes on cards
+            nodes.forEach((node, idx) => {
+                node.classList.toggle('flow-node-active', idx === index);
+            });
+
+            // 2. Set connector fills
+            fills.forEach((conn, idx) => {
+                // Temporarily disable transition for instant updates
+                conn.style.transition = 'none';
+
+                if (idx < index) {
+                    // Preceding lines are fully colored
+                    conn.style.width = isMobile() ? '100%' : '100%';
+                    conn.style.height = isMobile() ? '100%' : '100%';
+                } else if (idx > index) {
+                    // Succeeding lines are empty
+                    conn.style.width = isMobile() ? '100%' : '0%';
+                    conn.style.height = isMobile() ? '0%' : '100%';
+                } else {
+                    // Current active connector (idx === index)
+                    // Set it to starting state (0% filled)
+                    conn.style.width = isMobile() ? '100%' : '0%';
+                    conn.style.height = isMobile() ? '0%' : '100%';
+
+                    // Force reflow
+                    conn.offsetHeight;
+
+                    // Animate to 100% over the remaining time
+                    if (!isHovered) {
+                        const prop = isMobile() ? 'height' : 'width';
+                        conn.style.transition = `${prop} ${remainingTime}ms linear`;
+                        conn.style[prop] = '100%';
+                    }
+                }
+            });
+
+            animationStartTime = Date.now();
+            elapsedBeforePause = animationDuration - remainingTime;
+
+            if (!isHovered) {
+                loopTimeout = setTimeout(() => {
+                    const nextIndex = (index + 1) % nodes.length;
+                    updateActiveState(nextIndex);
+                }, remainingTime);
+            }
+        }
+
+        function pauseLoop() {
+            if (isHovered) return;
+            isHovered = true;
+            clearTimeout(loopTimeout);
+
+            const elapsed = Date.now() - animationStartTime + elapsedBeforePause;
+            elapsedBeforePause = elapsed;
+
+            const activeConn = fills[activeIndex];
+            if (activeConn) {
+                const computed = window.getComputedStyle(activeConn);
+                const currentWidth = computed.width;
+                const currentHeight = computed.height;
+
+                activeConn.style.transition = 'none';
+                activeConn.style.width = currentWidth;
+                activeConn.style.height = currentHeight;
+            }
+        }
+
+        function resumeLoop() {
+            if (!isHovered) return;
+            isHovered = false;
+
+            const remainingTime = Math.max(50, animationDuration - elapsedBeforePause);
+            updateActiveState(activeIndex, remainingTime);
+        }
+
+        function startLoop() {
+            updateActiveState(0);
+
+            // Hover listeners on wrapper to pause/resume
+            wrapper.addEventListener('mouseenter', pauseLoop);
+            wrapper.addEventListener('mouseleave', resumeLoop);
+
+            // Click listeners on cards to jump
+            nodes.forEach((node, i) => {
+                node.style.cursor = 'pointer';
+                node.addEventListener('click', () => {
+                    // Clear hover states first
+                    isHovered = false;
+                    clearTimeout(loopTimeout);
+                    updateActiveState(i);
+                });
+            });
+        }
+    })();
+
+    // ===== CALCULATOR =====
+    const sl=document.getElementById('callSlider'),sv=document.getElementById('sliderValue'),ml=document.getElementById('monthlyLoss'),yi=document.getElementById('yearlyImpact'),ah=document.getElementById('afterHours');
+    function fmt(n){return '$'+n.toLocaleString('en-US')}
+    function calc(){const c=parseInt(sl.value);sv.textContent=c+(c===1?' call/day':' calls/day');const m=c*30*45;ml.textContent=fmt(m);yi.textContent=fmt(m*12);ah.textContent=fmt(Math.round(m*0.35))}
+    if(sl){sl.addEventListener('input',calc);calc()}
+
+    // ===== MODAL =====
+    const modal = document.getElementById('reservationModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalForm = document.getElementById('modalReservationForm');
+    const openBtns = document.querySelectorAll('.open-modal-btn');
+
+    function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    openBtns.forEach(btn => btn.addEventListener('click', openModal));
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+
+    // Auto-open modal on reserve parameter/hash
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('reserve') === 'true' || window.location.hash === '#reserve') {
+            openModal();
+        }
+    });
+
+    // EmailJS init
+    (function() { emailjs.init('Mx50MkWPFCLI0c7lf'); })();
+
+    // Telegram Bot Config
+    const TG_BOT_TOKEN = '8166828931:AAHsDt5cr0InPaGhxtG8RFwgI5au3kSLXbw';
+    const TG_CHAT_ID = '5675482025';
+
+    async function sendToTelegram(formData) {
+        const message = `🚀 *New Reservation Request*\n\n👤 *Name:* ${formData.from_name}\n🏢 *Business:* ${formData.business_name}\n📧 *Email:* ${formData.from_email}\n📱 *Phone:* ${formData.phone}\n\n⏰ *Submitted:* ${new Date().toLocaleString()}`;
+        try {
+            const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: TG_CHAT_ID, text: message, parse_mode: 'Markdown' })
+            });
+            const data = await res.json();
+            if (!data.ok) {
+                console.error('Telegram API error:', data.description);
+                return false;
+            }
+            return true;
+        } catch (err) {
+            console.error('Telegram network error:', err);
+            return false;
+        }
+    }
+
+    if (modalForm) modalForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = modalForm.querySelector('button[type="submit"]');
+        const oldText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        modalForm.querySelectorAll('input').forEach(i => i.disabled = true);
+
+        // Collect form data
+        const formData = {
+            from_name: document.getElementById('modalName').value,
+            business_name: document.getElementById('modalBusiness').value,
+            from_email: document.getElementById('modalEmail').value,
+            phone: document.getElementById('modalPhone').value,
+            to_email: 'vectolift@gmail.com'
+        };
+
+        let telegramSuccess = false;
+        let emailjsSuccess = false;
+
+        // Send to Telegram
+        telegramSuccess = await sendToTelegram(formData);
+
+        // Send via EmailJS
+        try {
+            await emailjs.send('service_7hd3xqx', 'template_nmyab0w', formData);
+            emailjsSuccess = true;
+        } catch (err) {
+            console.error('EmailJS error:', err);
+        }
+
+        if (emailjsSuccess || telegramSuccess) {
+            btn.textContent = '✓ Reserved!';
+            btn.style.background = '#16a34a';
+            setTimeout(() => {
+                btn.textContent = oldText;
+                btn.style.background = '#1d1d1f';
+                btn.disabled = false;
+                modalForm.querySelectorAll('input').forEach(i => { i.disabled = false; i.value = ''; });
+                closeModal();
+            }, 2500);
+        } else {
+            btn.textContent = 'Submission Failed';
+            btn.style.background = '#ba1a1a';
+            setTimeout(() => {
+                btn.textContent = oldText;
+                btn.style.background = '#1d1d1f';
+                btn.disabled = false;
+                modalForm.querySelectorAll('input').forEach(i => i.disabled = false);
+            }, 3000);
+        }
+    });
+
+    // ===== COUNTDOWN TIMER =====
+    (function() {
+        const TIMER_KEY = 'vectolift_countdown_end';
+        let endTime = localStorage.getItem(TIMER_KEY);
+        if (!endTime || parseInt(endTime) <= Date.now()) {
+            endTime = Date.now() + 7 * 24 * 60 * 60 * 1000;
+            localStorage.setItem(TIMER_KEY, endTime.toString());
+        } else {
+            endTime = parseInt(endTime);
+        }
+
+        const daysEl = document.getElementById('cd-days');
+        const hoursEl = document.getElementById('cd-hours');
+        const minutesEl = document.getElementById('cd-minutes');
+        const secondsEl = document.getElementById('cd-seconds');
+        if (!daysEl) return;
+
+        function pad(n) { return n < 10 ? '0' + n : n; }
+
+        function updateCountdown() {
+            const now = Date.now();
+            let diff = endTime - now;
+            if (diff <= 0) {
+                // Reset timer when it expires
+                endTime = Date.now() + 7 * 24 * 60 * 60 * 1000;
+                localStorage.setItem(TIMER_KEY, endTime.toString());
+                diff = endTime - Date.now();
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            daysEl.textContent = pad(days);
+            hoursEl.textContent = pad(hours);
+            minutesEl.textContent = pad(minutes);
+            secondsEl.textContent = pad(seconds);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    })();
+});
+</script>
+</body></html>
