@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.vectolift.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://www.vectolift.com/blog.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.vectolift.com/blog-ai-receptionist-small-business.html</loc><priority>0.7</priority></url>
-  <url><loc>https://www.vectolift.com/blog-ai-calling-agent-missed-calls-revenue.html</loc><priority>0.7</priority></url>
-  <url><loc>https://www.vectolift.com/blog-ai-phone-agent-vs-human-receptionist.html</loc><priority>0.7</priority></url>
-  <url><loc>https://www.vectolift.com/blog-future-of-ai-business-communication.html</loc><priority>0.7</priority></url>
-  <url><loc>https://www.vectolift.com/privacy.html</loc><priority>0.3</priority></url>
-  <url><loc>https://www.vectolift.com/terms.html</loc><priority>0.3</priority></url>
-  <url><loc>https://www.vectolift.com/ethics.html</loc><priority>0.3</priority></url>
+  <url><loc>https://www.vectolift.com/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.vectolift.com/blog.html</loc><lastmod>2026-06-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.vectolift.com/blog-ai-receptionist-small-business.html</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vectolift.com/blog-ai-calling-agent-missed-calls-revenue.html</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vectolift.com/blog-ai-phone-agent-vs-human-receptionist.html</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vectolift.com/blog-future-of-ai-business-communication.html</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vectolift.com/privacy.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.vectolift.com/terms.html</loc><lastmod>2026-06-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.vectolift.com/ethics.html</loc><lastmod>2026-06-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
