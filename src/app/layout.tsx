@@ -98,17 +98,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   ];
 
   return (
-    <html lang={"en"} suppressHydrationWarning>
-      <head>
-        <script
-          key="ditto-json-ld-0"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </head>
-      <body suppressHydrationWarning className="h-full block relative text-foreground [font-family:seasonSans,_'seasonSans_Fallback'] text-base font-normal not-italic leading-6 tracking-[normal] [word-spacing:0px] text-start normal-case whitespace-normal [word-break:normal] [overflow-wrap:normal] indent-0 [text-shadow:none] [font-variant-caps:normal] [font-feature-settings:normal] list-outside [writing-mode:horizontal-tb] [direction:ltr] bg-background" data-cid="n0">
+    <html lang="en">
+      <body>
         {children}
-        <Analytics />
+        <GoogleAnalytics gaId="G-V5FP5S9SJF" />
       </body>
     </html>
   );
