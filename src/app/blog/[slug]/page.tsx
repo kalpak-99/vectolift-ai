@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `/blog/${post.slug}`,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
-      authors: [post.author.name],
+      authors: [typeof post.author === 'string' ? post.author : post.author.name],
       images: [`${origin}${post.heroImage}`],
     },
     twitter: {
@@ -104,7 +104,7 @@ export default async function BlogArticlePage({ params }: Props) {
       headline: post.title,
       description: post.metaDescription,
       image: `${origin}${post.heroImage}`,
-      author: { "@type": "Person", name: post.author.name },
+      author: { "@type": "Person", name: typeof post.author === 'string' ? post.author : post.author.name },
       publisher: {
         "@type": "Organization",
         name: "Vectolift",
@@ -170,11 +170,11 @@ export default async function BlogArticlePage({ params }: Props) {
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500 border-b border-slate-200 pb-6">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-xs">
-                  {post.author.name.charAt(0)}
+                  {(typeof post.author === 'string' ? post.author : post.author.name).charAt(0)}
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-800 text-sm leading-4">{post.author.name}</p>
-                  <p className="text-xs text-slate-500">{post.author.role}</p>
+                  <p className="font-semibold text-slate-800 text-sm leading-4">{typeof post.author === 'string'? post.author : post.author.name}</p>
+                  <p className="text-xs text-slate-500">{typeof post.author === 'string' ? '' : post.author.role}</p>
                 </div>
               </div>
               <span className="text-slate-300 max-md:hidden">|</span>
