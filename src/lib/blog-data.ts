@@ -37,42 +37,7 @@ export type BlogPost = {
 
 const posts: BlogPost[] = [
  
-{
-    slug: "real-cost-of-missed-call-plumbing-business",
-    title: "A Missed Call Is Not Just a Call: What It Really Costs Your Plumbing Business",
-    excerpt: "Most plumbers think a missed call is just a missed call. When you calculate lifetime value, one missed call can cost you over $2,000.",
-    author: "Vectolift Team",
-    date: "2024-12-15",
-    readTime: "8 min read",
-    category: "Business Growth",
-    content: `If you are a plumber, you have probably missed a call while you were under a sink, driving, or eating dinner. You called back 20 minutes later and no one picked up. You moved on. But that one call was not just a call.
 
-Let's do the real math. An average plumbing job in the US is $350 to $600. Let's take $450 as average. Now, a happy customer does not call you just once. They call you twice a year for maintenance, and they refer at least one friend in the next 12 months. So one new customer is not worth $450. One new customer is worth $450 plus $300 plus $450 = $1,200 in one year alone. If they stay with you for 3 years, that is over $2,500.
-
-So when you miss a call and that person calls the next plumber on Google, you did not lose $450. You lost $2,500.
-
-Now multiply that. If you miss just 3 calls a week, that is 12 calls a month. Even if half of them would have become customers, that is 6 customers x $1,200 = $7,200 lost every month. That is over $86,000 a year just because the phone rang when your hands were busy.
-
-Why do we miss calls? It is not because we are lazy. It is because plumbing is a hands-on job. You cannot answer a phone when you are soldering a pipe in a crawl space. And customers do not wait. Studies show 78% of customers will call a competitor if their first call is not answered. They have a burst pipe. It is an emergency. They will not leave a voicemail.
-
-The second hidden cost is Google ranking. Google tracks how fast businesses respond. If your response rate is slow, your profile starts to show lower. People also leave reviews like "Called multiple times, no answer". One such review can push 10 future customers away.
-
-So what can you actually do? Here are 5 practical things top-rated plumbers do, without hiring a full-time receptionist for $3,500 a month.
-
-1. Use a dedicated business number with call routing. Keep your personal number personal. This helps you track how many calls you actually get.
-
-2. Set up a 20-second rule. If you cannot pick up in 20 seconds, your call should go to a backup, not voicemail. Voicemail is dead for emergency services.
-
-3. Record your peak hours. Most plumbing calls come between 7 AM to 9 AM and 5 PM to 8 PM. That is when you are either starting a job or driving home. Plan coverage for those 4 hours.
-
-4. Create a quick callback script. Instead of "Sorry I missed your call", say "Hi, this is Mike from ABC Plumbing, I saw you called 12 minutes ago about a leak, are you safe, is water still leaking?" This shows you care about the emergency, not just the sale.
-
-5. Track your missed calls every Friday. Most phone apps show you this. Just look at how many you missed. When you see the number in front of you, you will take it seriously.
-
-You do not need to be available 24/7 yourself. You just need a system that makes sure no call goes to voicemail in the first 5 minutes. Whether it is a family member, a part-time answering help, or an AI receptionist, the goal is simple: every customer should hear a human voice in the first 30 seconds.
-
-Because in plumbing, the first business to answer the phone wins the job. Always.`,
-  },
   {
     slug: "why-customers-choose-another-plumber-in-5-minutes",
     title: "Why Homeowners Call Another Plumber Within 5 Minutes",
