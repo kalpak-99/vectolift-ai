@@ -48,7 +48,7 @@ const posts: BlogPost[] = [
   publishedAt: "2026-08-24",
   updatedAt: "2026-08-24",
   readingTime: "8 min read",
-  heroImage: "/assets/blog/missed-calls-plumber.webp",
+  heroImage: "/assets/blog/plumber-australia.webp",
   heroAlt: "AI receptionist for plumbers Australia",
   keyTakeaways: ["1 missed call/day = $91k loss in Australia", "AI answers in 2 seconds with Aussie accent", "Books directly into ServiceM8, Fergus, Simpro"],
   content: [{ type: "text", body: `
@@ -74,7 +74,7 @@ const posts: BlogPost[] = [
   publishedAt: "2026-08-24",
   updatedAt: "2026-08-24",
   readingTime: "8 min read",
-  heroImage: "/assets/blog/electrician-answering-service.webp",
+  heroImage: "/assets/blog/electrician-australia.webp",
   heroAlt: "24/7 answering service for electricians Australia",
   keyTakeaways: ["Electricians miss 30% calls - safety rules no phone on ladder", "63% emergency calls come after 5 PM in Australia", "AI books electrical jobs with safety questions"],
   content: [{ type: "text", body: `
@@ -100,7 +100,7 @@ const posts: BlogPost[] = [
   publishedAt: "2026-08-24",
   updatedAt: "2026-08-24",
   readingTime: "8 min read",
-  heroImage: "/assets/blog/missed-calls-plumber.webp",
+  heroImage: "/assets/blog/hvac-australia.webp",
   heroAlt: "AI receptionist for HVAC Australia",
   keyTakeaways: ["HVAC loses 40% calls during heatwave - AI handles 100 at once", "Average split system repair $450, replacement $9k-$15k", "AI collects system type, age, error code for tech"],
   content: [{ type: "text", body: `
