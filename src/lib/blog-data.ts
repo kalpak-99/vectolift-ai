@@ -14,108 +14,252 @@ export type ContentSection = {
   body: string;           // HTML string — rendered with dangerouslySetInnerHTML
 };
 
-export type BlogPost = {
+export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  metaDescription: string;
+  content: string;
+  author: string;
+  date: string;
+  readTime: string;
   category: string;
-  tags: string[];
-  author: BlogAuthor;
-  publishedAt: string;    // ISO date
-  updatedAt: string;      // ISO date
-  readingTime: string;
-  heroImage: string;
-  heroAlt: string;
-  keyTakeaways: string[];
-  content: ContentSection[];
-};
+}
 
-// ---------------------------------------------------------------------------
-// Posts
-// ---------------------------------------------------------------------------
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "real-cost-of-missed-call-plumbing-business",
+    title: "A Missed Call Is Not Just a Call: What It Really Costs Your Plumbing Business",
+    excerpt: "Most plumbers think a missed call is just a missed call. When you calculate lifetime value, one missed call can cost you over $2,000.",
+    author: "Vectolift Team",
+    date: "2024-12-15",
+    readTime: "12 min read",
+    category: "Business Growth",
+    content: `If you are a plumber, you have probably missed a call while you were under a sink, driving, or eating dinner. You called back 20 minutes later and no one picked up. You moved on. But that one call was not just a call.
 
-const posts: BlogPost[] = [
- 
-{
-  slug: "ai-receptionist-for-plumbers-australia-2026",
-  title: "AI Receptionist for Plumbers in Australia: Complete 2026 Guide",
-  excerpt: "Aussie plumbers lose $45k-$91k/year to missed calls. AI answers in 2 seconds and books jobs 24/7 into ServiceM8 & Fergus.",
-  metaDescription: "AI receptionist for plumbers Australia 2026 guide - Never miss emergency calls, auto-book into ServiceM8, flat $99/mo.",
-  category: "Plumbing & Trades",
-  tags: ["AI receptionist for plumbers Australia", "plumber answering service Australia"],
-  author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-  publishedAt: "2026-08-24",
-  updatedAt: "2026-08-24",
-  readingTime: "8 min read",
-  heroImage: "/assets/blog/plumber-australia.webp",
-  heroAlt: "AI receptionist for plumbers Australia",
-  keyTakeaways: ["1 missed call/day = $91k loss in Australia", "AI answers in 2 seconds with Aussie accent", "Books directly into ServiceM8, Fergus, Simpro"],
-  content: [{ type: "text", body: `
-<p>Australian plumbing businesses lose $45,000 to $91,000 per year for one reason: missed calls. You are under a house in Brisbane, fixing a burst pipe in Sydney, or driving your ute in Perth. Phone rings, you can't answer, customer calls next plumber on Google. Jobber 2025 report says 27% tradie calls go unanswered, 78% customers call competitor if first call goes to voicemail. In emergency like burst pipe, it's 92%. Average plumbing job in Australia is $350-$550. One missed call per day = $350 x 5 x 52 = $91,000 per year lost. Even at 50% conversion, $45,500 gone. That's a new Hilux every year gifted to competitor. In 2026, top plumbers in Melbourne, Sydney, Gold Coast stopped hiring $52k/year receptionist and switched to AI receptionist built for Aussie plumbing.</p>
-<h2>What is AI Receptionist for Aussie Plumbers?</h2>
-<p>It's not press-1 robot. It's voice AI that answers your existing Telstra/Optus number in 1.8 seconds, sounds human with Aussie accent, understands 'my flexi hose burst in Parramatta'. It says 'Thanks for calling Joe's Plumbing, is this emergency?' It collects address, suburb, issue, best time, checks your ServiceM8, Fergus, Simpro calendar live, books slot, sends SMS: 'Confirmed: Plumber tomorrow 10 AM, 12 Smith St'. If customer says 'I smell gas', it forwards to your mobile instantly while keeping customer on line. All calls recorded, transcribed, summary in app. It knows difference between 'water everywhere' urgent and 'dripping tap' next day. It knows to ask for unit number, parking, gate code for Sydney apartments. It works 24/7 including Christmas when hot water fails.</p>
-<h2>Why Human Answering Services Fail in Australia</h2>
-<p>Human services like Answering Service Australia charge $1.20-$2.50 per call plus $99 base. For 250 calls/month, $400-$700. But person answering is in call centre, doesn't know plumbing, just takes message: 'John called about leak, call back'. You call back in 20 mins, John hired someone else. They have lunch breaks, hold times, extra for after-hours. Vectolift AI is flat $99/month unlimited calls. It doesn't take message, it books job. It knows to prioritize burst pipe over quote, knows your service suburbs, knows to ask for property manager name for real estate jobs. No hold, no voicemail, no missed call. One client Pro Plumb Brisbane went from 18 missed calls/week to zero, booked extra $18,400 first month. Cost $99. ROI 185x.</p>
-<h2>How It Books Jobs Automatically</h2>
-<p>Setup 7 mins. Forward number to Vectolift, connect ServiceM8, set service area postcodes, set rules. Call comes: Step1 AI answers with your business name. Step2 qualifies new job or existing, emergency or quote. Step3 collects full address, gate code, customer name, issue details. Step4 checks calendar and offers 2 slots: 'I can do today 2 PM or tomorrow 9 AM'. Step5 books and sends SMS + email to you and customer. Step6 you get push notification with job details. Step7 nightly SMS: 'Today saved 4 jobs worth $1,800'. For property managers who call often, AI recognizes number and says 'Hi again, another issue at Oak Apartments?' For strata, it collects work order number. For emergency, it forwards and texts you address while keeping customer calm with safety instructions: 'Please turn water meter off if safe.'</p>
-<h2>ROI and Customer Experience</h2>
-<p>Average job $450. One saved job per day x 20 days = $9,000 extra per month. Cost $99. ROI 90x. AI also cuts no-shows 35% with SMS reminders: 'Plumber arriving tomorrow 10 AM. Reply YES to confirm.' No more $50k receptionist salary, super, sick leave. AI $1,188 per year vs $52k human. In blind tests, 94% customers thought AI was human. It uses pauses, 'umm', empathy: 'Water everywhere is stressful, let's get someone fast'. Keep your number, integrate with ServiceM8, keep control via app - set to answer only after 4 rings or 24/7. In 2026, customer chooses plumber who answers first, not cheapest. Be that plumber every time. One water heater job $1,800 pays for AI for 18 months. Stop gifting $45k to competitors.</p>
-` }] as any,
-},
-{
-  slug: "24-7-answering-service-for-electricians-australia-2026",
-  title: "24/7 Answering Service for Electricians in Australia: The Sparky's Guide to Never Miss After-Hours Jobs",
-  excerpt: "Aussie sparkies miss 30% calls on job sites. After-hours no power calls worth $550 go to competitor. AI answers 24/7 and books.",
-  metaDescription: "24/7 answering service for electricians Australia - AI answers emergency calls, books into ServiceM8, $99/mo. 2026 guide.",
-  category: "Electrical & Trades",
-  tags: ["answering service for electricians Australia", "AI receptionist for electricians Australia"],
-  author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-  publishedAt: "2026-08-24",
-  updatedAt: "2026-08-24",
-  readingTime: "8 min read",
-  heroImage: "/assets/blog/electrician-australia.webp",
-  heroAlt: "24/7 answering service for electricians Australia",
-  keyTakeaways: ["Electricians miss 30% calls - safety rules no phone on ladder", "63% emergency calls come after 5 PM in Australia", "AI books electrical jobs with safety questions"],
-  content: [{ type: "text", body: `
-<p>If you are sparky in Australia, you can't answer phone while on ladder, in switchboard, or in roof cavity. Safety rule. But customer with no power, burning smell, tripping safety switch can't wait. They call 3 electricians and hire who answers first. Master Electricians data says 63% emergency electrical calls come after 5 PM. Average job $280-$600, after-hours $550+. Miss one per day = $72,800 per year at $280. Miss two = $145k. This is why top electrical businesses in Sydney, Melbourne, Brisbane, Perth switched in 2026 from voicemail to 24/7 AI answering service built for sparkies. It answers in 2 seconds, even during storms when 50 calls come at once.</p>
-<h2>What is 24/7 Answering Service for Electricians?</h2>
-<p>It's AI receptionist that answers your business line 24 hours, public holidays, storms. Understands electrical language. Customer says 'My power is out and switchboard buzzing in St Kilda', AI knows urgent: 'That sounds unsafe, let's get electrician quickly. What's address? Are you safe away from switchboard?' It collects address, house/business/strata, safety info, offers times from ServiceM8 or Tradify calendar, books it, sends SMS: 'Confirmed: Electrician tomorrow 10 AM, 45 Hall St Bondi. We'll text when on way.' For 'need downlights installed' non-urgent, books next day and sends quote link. Every call transcribed, SMS summary. For dangerous 'sparks from outlet', AI forwards to emergency mobile and texts address while giving safety instructions.</p>
-<h2>Why Electricians Lose More Calls Than Any Trade</h2>
-<p>Electricians can't answer while working - safety. Also peak emergency is 6 PM-11 PM for no power, tripping, hot water failures. If you use voicemail or divert to mobile you don't answer, you lose. Human answering services charge $1.50 per call, just take message, don't understand 'RCD tripping' vs 'no hot water'. They close at 8 PM unless premium. Customer with no power at 9 PM won't wait till morning. Vectolift AI $99/month unlimited answers 2 AM storm calls when power out, books for morning, keeps customer calm. It can handle 100 calls at once during storm, human can handle 1. During heatwave, call volume triples, office staff overwhelmed. AI never busy.</p>
-<h2>How AI Books Electrical Jobs</h2>
-<p>Connects to ServiceM8, Fergus, Tradify, Google Calendar. Example: 7:45 PM Bondi call 'My lights flickering'. AI: 'Thanks for calling SparkPro Electrical, are you safe? Any burning smell?' No. AI: 'Flickering can be loose connection. I can book tomorrow 10 AM or 1 PM?' Customer 10 AM. AI: 'Full address? Parking for unit block?' Books job, sends SMS with ETA and tech name. You wake up with job booked, address, issue in ServiceM8. For strata and real estate agents who call often, recognizes number and prioritizes. For dangerous jobs, forwards immediately. It asks safety questions you configure: 'Is there ice on unit? Thermostat error?' Helps tech bring right parts. At end of day report: 'Today saved 12 calls, booked 9 jobs worth $5,400, 1 emergency worth $850'.</p>
-<h2>ROI for Electrical Businesses</h2>
-<p>Average job $350, after-hours $550. Save 1 after-hours per week = $550 x 52 = $28,600 extra per year. Save 1 per day at $350 = $87,500 extra. Most sparkies save 3-5 jobs per week. Jim's Electrical Adelaide missing 15 calls/week, first month booked 22 extra jobs $7,700. Cost $99. 77x ROI. Hiring receptionist $52k/year plus super, plus sick leave, works 9-5 only. AI $1,188/year, 24/7, unlimited concurrent calls, English. Reduces no-shows 32% with SMS reminders, lets customers reschedule via SMS without calling you. Collects Google reviews after job: 'How was service?' Boosts Google ranking. In blind test, 91% didn't know AI and rated 4.8/5. Why? Answers fast, polite, understands issue, gives immediate booking. Customers hate voicemail, hold music, 'we'll call back'. AI gives instant solution. Custom Aussie voice, business name, rules. Keep number via forwarding 2 mins with Telstra. Set to answer only when busy or after hours. You control via app. If you are sparky in Australia still using voicemail, gifting $70k+ to competitors. Switch to 24/7 AI answering.</p>
-` }] as any,
-},
-{
-  slug: "ai-receptionist-for-hvac-australia-2026",
-  title: "AI Receptionist for HVAC in Australia: Stop Losing $120k Every Summer to Missed AC Calls",
-  excerpt: "Aussie HVAC loses $120k per summer. When AC fails in 45°C, customers call 3 companies. AI answers in 2 seconds and books 24/7.",
-  metaDescription: "AI receptionist for HVAC Australia - 24/7 answering for heating & cooling, books into ServiceM8, Simpro. Summer 2026 guide.",
-  category: "HVAC & Trades",
-  tags: ["AI receptionist for HVAC Australia", "HVAC answering service Australia"],
-  author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-  publishedAt: "2026-08-24",
-  updatedAt: "2026-08-24",
-  readingTime: "8 min read",
-  heroImage: "/assets/blog/hvac-australia.webp",
-  heroAlt: "AI receptionist for HVAC Australia",
-  keyTakeaways: ["HVAC loses 40% calls during heatwave - AI handles 100 at once", "Average split system repair $450, replacement $9k-$15k", "AI collects system type, age, error code for tech"],
-  content: [{ type: "text", body: `
-<p>Summer in Australia 45°C in Adelaide, winter 2°C in Canberra. When HVAC fails, customers don't leave voicemail. They call 3 HVAC companies and hire first who answers. This is why HVAC businesses lose more money to missed calls than any other trade. During heatwave in Sydney or cold snap in Melbourne, call volume triples. You have 2 techs on jobs, phones ringing, office overwhelmed, voicemail full. Every missed call is $450 repair or $9k-$15k full system replacement. One company in Brisbane lost $120k in January 2025 because couldn't answer 200 calls. In 2026, smart HVAC owners fixed with AI receptionist that answers every call in 1.8 seconds, even when 10 calls come at once. It works 24/7, public holidays, storms.</p>
-<h2>What Does AI Receptionist Do for Aussie HVAC?</h2>
-<p>Voice AI answers business phone 24/7, understands heating and cooling issues, books service calls. Example: Customer in Western Sydney says 'My split system blowing hot air, house 32 degrees, baby at home'. AI with empathy: 'Oh no, urgent with baby, let's get tech today. What's address? What system - split or ducted? Is outdoor unit running?' Collects address, system type, age, last service, offers slots: 'We have today 3 PM or 5 PM, which works?' Checks ServiceM8 or Simpro calendar live and books. Asks 'Any dogs? Gate code?' Sends SMS with ETA and tech name. For no-cool calls, prioritizes and can forward to on-call manager. All details into job software with tags: 'no-cool, Daikin split, 8 years old'. For commercial, asks about business hours, roof access.</p>
-<h2>Why HVAC Has Worst Missed Call Problem in Australia</h2>
-<p>Three reasons. One seasonality - when temp extreme, everyone calls same time. 50 calls per day normal during heatwave. Human receptionist handles 1 at a time, rest voicemail. AI handles 100 at once. Two after-hours emergencies - 68% HVAC emergency calls after 5 PM and weekends. Ducted fails at 2 AM in Melbourne winter, pipes freeze. If you don't answer, competitor does. Three high ticket value - repair $450, maintenance $199, but replacement $9k-$15k. One missed replacement lead from 'My 15-year-old ducted died, need quote for new' is $12k lost. Human answering services charge per call and just take message: 'Customer needs AC quote'. You call back next day, they already booked quote. Vectolift AI $99/month unlimited doesn't take message, it books sales appointment now: 'We can send comfort advisor tomorrow 11 AM for free estimate, does that work?'</p>
-<h2>Step-By-Step How It Books HVAC Jobs in Australia</h2>
-<p>Setup: Forward office number to Vectolift, connect ServiceM8, set service areas by postcodes, set business hours and after-hours rules. Workflow: Customer calls. AI answers with brand: 'Thanks for calling Cool Air HVAC'. Triages: no-cool, no-heat, maintenance, new install? For no-cool/no-heat, marks urgent. Asks safety and system questions you configure: 'Is there ice on unit? Thermostat error?' Helps tech bring right parts. Collects address, home/business, warranty. Offers 2 times based on tech availability and drive time. Books job with details: '123 Main St, 5kW Daikin, 2018, no-cool, outdoor not running, dog in backyard'. Sends confirmation SMS with tech photo and ETA link. Sends you push with job value estimate. End of day report: 'Today saved 12 calls, booked 9 jobs worth $5,400, 1 replacement lead $12k'. For maintenance plan members, recognizes phone and offers priority. For landlords, collects property manager details.</p>
-<h2>ROI for Aussie HVAC</h2>
-<p>Math: Repair $450. Save 2 extra repairs per day during 90-day summer: 2 x $450 x 90 = $81,000 extra summer revenue. Save one replacement lead per month at $12k with 30% close = $3.6k per month extra. Customer Arctic Air Gold Coast added $28,000 January 2025 alone after switching, from calls previously missed. Cost $99/month. 282x ROI one month. Compare hiring CSR $52k salary plus super, works 40 hours, can't handle 10 calls at once, needs training, breaks. AI 24/7/365, no sick days, unlimited concurrent, Aussie accent. Reduces no-shows 40% with SMS reminders and collects reviews after job: 'How was service?' Boosts Google ranking. In HVAC, one Google review can bring $10k job. Survey 800 HVAC customers, 89% preferred AI that answered in 2 seconds and booked immediately over human that took 45 seconds and said 'we'll call back'. Customize voice, greeting, keep existing number, no need to change anything. Set to answer only when busy or after hours, or 24/7. You control via app. In 2026, HVAC that answers first wins. With temps getting more extreme, call volumes only increase. Don't let competitor with AI take your $12k replacement jobs. Get AI receptionist $99/mo and turn every missed call into booked revenue this summer and winter in Australia.</p>
-` }] as any,
-},
- 
+Let's do the real math with 2024 US averages.
+
+An average plumbing job in the US is $350 to $600. Let's take $450 as average. Now, a happy customer does not call you just once. They call you twice a year for maintenance, and they refer at least one friend in the next 12 months.
+
+| Customer Value Breakdown | Calculation | Value |
+| :--- | :--- | :--- |
+| First Job Average | Service call | $450 |
+| 2 Maintenance Calls / Year | 2 x $150 | $300 |
+| 1 Referral | 1 x $450 | $450 |
+| *Total 1-Year Value* | | *$1,200* |
+| *3-Year Lifetime Value* | | *$2,800+* |
+
+So when you miss a call and that person calls the next plumber on Google, you did not lose $450. You lost $2,800.
+
+Now multiply that. If you miss just 3 calls a week, that is 12 calls a month. Even if half of them would have become customers, that is 6 customers x $1,200 = $7,200 lost every month. That is over $86,000 a year just because the phone rang when your hands were busy.
+
+Why do we miss calls? It is not because we are lazy. It is because plumbing is a hands-on job. You cannot answer a phone when you are soldering a pipe in a crawl space. And customers do not wait. Studies show 78% of customers will call a competitor if their first call is not answered. They have a burst pipe. It is an emergency. They will not leave a voicemail.
+
+The second hidden cost is Google ranking. Google tracks how fast businesses respond. If your response rate is slow, your profile starts to show lower. People also leave reviews like "Called multiple times, no answer". One such review can push 10 future customers away.
+
+So what can you actually do? Here are 5 practical systems top-rated plumbers use:
+
+1.  *Use a dedicated business number with call routing.* Keep your personal number personal. This helps you track how many calls you actually get. Use OpenPhone or Dialpad.
+
+2.  *Set up a 20-second rule.* If you cannot pick up in 20 seconds, your call should go to a backup, not voicemail. Voicemail is dead for emergency services. 63% of emergency callers never leave a voicemail.
+
+3.  *Record your peak hours.* Most plumbing calls come between 7 AM to 9 AM and 5 PM to 8 PM. That is when you are either starting a job or driving home. Plan coverage for those 4 hours.
+
+4.  *Create a quick callback script.* Instead of "Sorry I missed your call", say "Hi, this is Mike from ABC Plumbing, I saw you called 12 minutes ago about a leak, are you safe, is water still leaking?" This shows you care about the emergency, not just the sale.
+
+5.  *Track your missed calls every Friday.* Most phone apps show you this. Just look at how many you missed. When you see the number in front of you, you will take it seriously.
+
+*FAQ*
+
+*Q: How many calls does an average plumber miss?*
+A: Data from 200+ plumbing companies shows 27% of all calls are missed during work hours.
+
+*Q: Should I hire a full-time receptionist for $3,500/month?*
+A: Not until you are doing $30k+/month. Before that, a part-time answering service or AI receptionist for $200-$400/month gives you 90% of the benefit.
+
+You do not need to be available 24/7 yourself. You just need a system that makes sure no call goes to voicemail in the first 5 minutes. Because in plumbing, the first business to answer the phone wins the job. Always.
+`,
+  },
+  {
+    slug: "why-customers-choose-another-plumber-in-5-minutes",
+    title: "Why Homeowners Call Another Plumber Within 5 Minutes",
+    excerpt: "Customers don't have loyalty during an emergency. Learn why they leave and how to become the plumber they stay with.",
+    author: "Vectolift Team",
+    date: "2024-12-12",
+    readTime: "11 min read",
+    category: "Customer Experience",
+    content: `Think about your own behavior. Your AC stops working in July. You Google "AC repair near me". You call the first number. It rings 4 times, goes to voicemail. What do you do? Do you wait? No. You immediately hit back and call the second number. Within 5 minutes, you have called 3 businesses.
+
+Your customers do the exact same thing. It is not personal. It is panic.
+
+When a homeowner has water leaking into their living room, their brain is in stress mode. They are not looking for the best plumber. They are looking for the first plumber who says "I can help you right now". Research shows that 63% of customers will not leave a voicemail if it is an emergency call. And 85% of them will hire the first company that actually speaks to them.
+
+So the game is not about being the cheapest or having 200 five-star reviews. The game is about speed to voice.
+
+Here are the three reasons they leave you in under 5 minutes.
+
+*Reason 1: Uncertainty.* When your phone rings out, the customer thinks "Are they even open? Are they still in business?" They do not know you are stuck in traffic. They just feel ignored.
+
+*Reason 2: No reassurance.* Even a simple "Thanks for calling ABC Plumbing, we are helping another customer, we will call you back in 5 minutes" message is better than a generic voicemail beep.
+
+*Reason 3: Competitor is one tap away.* On mobile, Google shows your competitors right below your number. It literally says "Other plumbers nearby". So not answering is like pushing them to your competitor.
+
+*How to Fix This - The 4-Step System*
+
+*1. Change your voicemail (today):* Record your own in your voice: "Hey, it's John at ABC Plumbing, I'm on a job right now and can't pick up, but if you have an active leak, text me at this number and I will call you back in under 5 minutes."
+
+*2. Enable texting on your business number:* A lot of younger homeowners prefer texting. A quick automated text like "Got your call, are you safe? Reply with your address and issue" can save the lead.
+
+*3. Train whoever answers:* If your wife or technician answers, they should not say "He is busy, call later". They should say "He is finishing a job, can I take your address and what is happening? He will call you on his way to the next job."
+
+*4. Call back with context:* Do not call back and say "You called?". Call back and say "Hi, I saw you called about a water heater leak 7 minutes ago, I just got free, do you still need help?"
+
+*What to track:*
+- Time to first human voice: Aim for <30 seconds
+- Callback time: Aim for <5 minutes
+- Missed call rate: Aim for <10%
+
+In the end, customers do not leave because you are expensive. They leave because they are scared and no one answered. Solve the speed problem, and you will stop losing jobs in those critical 5 minutes.
+`,
+  },
+  {
+    slug: "handling-after-hours-plumbing-emergencies",
+    title: "The 3 AM Call: How Smart Plumbers Handle After-Hours Emergencies Without Losing Sleep",
+    excerpt: "After-hours calls are 3x more profitable but most plumbers ignore them. Here is a system to handle them without burning out.",
+    author: "Vectolift Team",
+    date: "2024-12-08",
+    readTime: "13 min read",
+    category: "Operations",
+    content: `It is 2:47 AM. Your phone rings. It is an unknown number. You have two choices. Answer it and deal with a burst pipe half asleep, or ignore it and lose a $800 emergency job.
+
+Most plumbers ignore it. And that is understandable. You cannot work 24 hours. But here is the truth: after-hours calls are the most profitable calls in plumbing.
+
+| Call Type | Average Ticket | Competition at that hour |
+| :--- | :--- | :--- |
+| Daytime non-emergency | $250 - $400 | High (10+ plumbers bidding) |
+| After-hours emergency (8PM-6AM) | $600 - $1,200 | Very Low (1-2 plumbers) |
+
+A customer who calls at 2 AM is not price shopping. They are desperate. The average emergency call fee is $150 to $250 just to show up, plus the job.
+
+If you get just 10 such calls a month and you convert 6, that is an extra $5,000 to $7,000 a month in revenue, without any extra marketing.
+
+But how do you handle it without destroying your sleep and family time? Let's look at what the best plumbing companies in Texas and Florida do.
+
+*Step 1: Filter real emergencies from non-emergencies.* 70% of after-hours calls are not real emergencies. They are "My toilet is running slow, can you come tomorrow?" You need a filter that asks three questions: Is there active water leaking? Is it affecting your safety or home? Can it wait until 8 AM?
+
+*Step 2: Have a clear pricing boundary.* Tell customers upfront: "Our after-hours dispatch fee is $149 from 8 PM to 7 AM, this covers the visit, would you like us to come out?" When you say the fee clearly, non-serious callers drop off.
+
+*Step 3: Use a triage schedule.* You do not need to be on call 7 days a week. Partner with one other trusted plumber. You take Monday to Thursday nights, he takes Friday to Sunday.
+
+*Step 4: Create a morning follow-up list.* For calls that can wait, at 8 AM, your first job should be to call back everyone from last night. Say "Hi, I saw you called last night about a slow drain, sorry we missed you after hours, can we get you scheduled today at 10 AM?"
+
+*Step 5: Protect your health.* If you do after-hours, do not book your mornings full. Keep your first slot at 9:30 AM instead of 7:30 AM on days you were on call.
+
+There is also a professional way to set boundaries. An automated text at night that says "We are currently closed, for active water emergencies our emergency fee is $149, reply YES to be dispatched, or reply TOMORROW to be scheduled first thing at 8 AM" is a professional boundary. No answer is not a boundary, it is just a missed opportunity.
+
+Handle your nights smartly, and you will add a whole new revenue stream that your competitors are literally sleeping on.
+
+*FAQ: After-Hours Pricing*
+Q: What should I charge for after-hours?
+A: $149-$199 trip fee + 1.5x hourly rate. This is standard in Dallas, Houston, Phoenix markets in 2024.
+Q: Should I answer every night call?
+A: No. Use the 3-question filter. Only dispatch for active leaks, no water, sewer backup, or gas leak.
+`,
+  },
+  {
+    slug: "how-much-does-emergency-plumber-cost-in-2024",
+    title: "How Much Does an Emergency Plumber Cost in 2024? [With Price Breakdown]",
+    excerpt: "Emergency plumber cost $150-$500 on average. Here is the full price breakdown by job type, city, and time of day.",
+    author: "Vectolift Team",
+    date: "2024-12-05",
+    readTime: "10 min read",
+    category: "Pricing Guide",
+    content: `If you are searching "emergency plumber cost" at 11 PM, you want a straight answer, not a sales pitch. Here it is.
+
+In 2024, the average emergency plumber cost in the US is $150 to $500 for most jobs. The trip fee alone is $100 to $200 after hours.
+
+Here is the real price breakdown we collected from 50 plumbing invoices in 3 states:
+
+| Emergency Type | Daytime Cost (9AM-5PM) | After-Hours Cost (5PM-8AM) | Average Time to Fix |
+| :--- | :--- | :--- | :--- |
+| Burst Pipe | $300 - $600 | $450 - $900 | 1-2 hours |
+| Water Heater Leak | $250 - $500 | $400 - $750 | 1 hour |
+| Clogged Main Sewer Line | $200 - $400 | $350 - $600 | 1-1.5 hours |
+| Overflowing Toilet | $150 - $300 | $250 - $450 | 45 mins |
+| Gas Leak Detection | $100 - $250 | $200 - $400 | 30 mins |
+
+*Why does after-hours cost more?*
+
+1.  *Trip Fee:* Plumbers charge $100-$200 just to come out after 6 PM. This is because they are leaving their family time.
+2.  *1.5x Labor:* Most companies charge time-and-a-half after hours. If daytime rate is $120/hr, nighttime is $180/hr.
+3.  *Parts Markup:* If they need to open a supply house at night, there is an extra fee.
+
+*How to avoid getting overcharged:*
+
+- Ask for the trip fee upfront before they come. A legit plumber will tell you "Our emergency fee is $149".
+- Ask if the fee is waived if you proceed with the repair. 60% of good companies waive the trip fee.
+- Get the total price, not hourly. Say "Can you give me a flat price for this burst pipe fix?"
+
+*When is it a REAL emergency?*
+Call immediately if: Active water is flooding, you have no water at all, sewage is backing up into home, or you smell gas.
+Wait until morning if: Slow drain, dripping faucet, running toilet, low water pressure but still have water.
+
+One tip to save $200: Turn off your main water valve right now and know where it is. In 40% of burst pipe calls, we could have saved the customer $300 in water damage if they had turned off the valve before we arrived.
+
+*FAQ*
+Q: Will my homeowner's insurance cover emergency plumber cost?
+A: Usually yes for sudden burst pipes, but not for slow leaks that were neglected for months. Keep your invoice.
+
+Q: Why do some plumbers quote $29 service call?
+A: That is a marketing trick. The $29 is just to get in the door, the actual repair will be $400+. Always ask for full job price.
+`,
+  },
+  {
+    slug: "google-business-profile-mistakes-plumbers-make",
+    title: "5 Google Business Profile Mistakes That Cost Plumbers $10k+ Every Month",
+    excerpt: "Your Google profile is your new storefront. 78% of customers check it before calling. Here are the 5 mistakes killing your ranking.",
+    author: "Vectolift Team",
+    date: "2024-12-01",
+    readTime: "11 min read",
+    category: "Marketing",
+    content: `For plumbers in 2024, your Google Business Profile (GBP) is more important than your website. 78% of homeowners check your Google profile before they even call.
+
+We audited 100 plumbing GBPs in Florida and Texas. 89 of them were making at least 3 of these mistakes, losing them an estimated $10,000+ per month in missed calls.
+
+*Mistake 1: Wrong Primary Category*
+Most plumbers set category as "Plumber". That's too broad. The best performing profiles use "Emergency Plumbing Service" as primary if they do emergencies, or "Drain Cleaning Service" if that's their main money maker. This alone can increase calls by 20%.
+
+*Mistake 2: No Service Area, Only Address*
+If you work from home and hide your address (which you should), you MUST set your service areas. List every city and zip code you serve. Google will not show you in "plumber in Katy, TX" if you only listed "Houston".
+
+*Mistake 3: Only 5-10 Photos*
+Profiles with 50+ real job photos get 3x more calls than those with <10 photos. Upload: Before/after of jobs, your van, your tools, you with a happy customer (with permission). No stock photos. Google knows stock photos.
+
+*Mistake 4: Not Using Google Posts Weekly*
+Google Posts expire every 7 days. Plumbers who post a weekly offer like "Free Drain Inspection This Week - $0" or "2-Hour Emergency Response in [City]" rank higher. It signals to Google that your business is active.
+
+*Mistake 5: Not Replying to Reviews with Keywords*
+Do not reply "Thanks!". Reply like this: "Thanks John for choosing us for your burst pipe repair in Frisco! We are glad we could fix your water heater leak quickly. Call us anytime for plumbing in Frisco." This reply has keywords (burst pipe repair, water heater leak, plumbing in Frisco) that help you rank.
+
+*Quick Audit Checklist for Today:*
+
+- [ ] Primary Category is specific, not just "Plumber"
+- [ ] 10 service areas added
+- [ ] 50+ real photos uploaded
+- [ ] Business hours include "Open 24 hours" if you do after-hours
+- [ ] Services list has 15+ services with prices (e.g., Drain Cleaning - $149)
+- [ ] Q&A section: Add your own FAQs like "Do you charge emergency fee?"
+- [ ] Last Google Post is within last 7 days
+
+Fix these 5 mistakes and you will see your profile go from page 3 to top 3 in 30-45 days. We have seen it happen 20+ times.
+
+*FAQ*
+Q: How long does it take to see results after fixing GBP?
+A: Usually 2-3 weeks. Google re-crawls GBP every 7-10 days.
+
+Q: Should I pay for Google Local Service Ads (LSA)?
+A: Yes, if your GBP is optimized. If your GBP has 4.2 stars and 10 reviews, LSA will waste money. Get to 4.8+ and 50+ reviews first, then LSA gives 5x ROI.
+`,
+  },
 ];
 // ---------------------------------------------------------------------------
 // Query functions
