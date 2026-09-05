@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import "./globals.css";
 import "./ditto.css";
 import type { ReactNode } from "react";
@@ -97,10 +98,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     },
   ];
 
-  return (
+ return (
     <html lang="en">
       <body>
         {children}
+
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-VSFP5S9SJF" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VSFP5S9SJF');
+          `}
+        </Script>
+
       </body>
     </html>
   );
