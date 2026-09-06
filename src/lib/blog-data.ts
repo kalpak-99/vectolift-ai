@@ -14,16 +14,22 @@ export type ContentSection = {
   body: string;           // HTML string — rendered with dangerouslySetInnerHTML
 };
 
-export interface BlogPost {
+export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
-  content: string;
-  author: string;
-  date: string;
-  readTime: string;
+  metaDescription: string;
   category: string;
-}
+  tags: string[];
+  author: BlogAuthor;
+  publishedAt: string;  // ISO date
+  updatedAt: string;  // ISO date
+  readingTime: string;
+  heroImage: string;
+  heroAlt: string;
+  keyTakeaways: string[];
+  content: ContentSection[];
+};
 
 export const blogPosts: BlogPost[] = [
  {
