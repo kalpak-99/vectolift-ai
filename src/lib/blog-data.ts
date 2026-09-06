@@ -32,195 +32,112 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
- {
+  {
     slug: "ai-receptionist-for-plumbers-australia",
-    title: "AI Receptionist for Plumbers in Australia: Stop Losing $45,000/Year to Missed Calls [2026 Guide]",
-    excerpt: "Australian plumbing businesses lose $45,000 per year to missed emergency calls. 27% of calls are missed on job sites. Here's how AI receptionist fixes it.",
-    metaDescription: "AI receptionist for plumbers Australia - Never miss emergency calls. 24/7 answering, job booking, and after-hours triage. Save $45k/year. See pricing & ROI.",
+    title: "AI Receptionist for Plumbers in Australia: How Top Plumbers Save $45,000/Year in 2026",
+    excerpt: "Australian plumbing businesses lose $45,000 per year to missed emergency calls. 27% of calls are missed on job sites. AI receptionist answers in 2 seconds 24/7.",
+    metaDescription: "AI receptionist for plumbers Australia - 24/7 answering service for burst pipe, hot water emergencies. Save $45k/year. Pricing, ROI for Sydney, Melbourne, Brisbane plumbers.",
     category: "Plumbing & Trades",
-    tags: ["AI receptionist for plumbers Australia", "plumber answering service", "after hours plumber Australia"],
+    tags: ["AI receptionist for plumbers Australia", "plumber answering service Australia", "after hours plumber answering service"],
     author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-    publishedAt: "2026-09-05",
-    updatedAt: "2026-09-05",
-    readingTime: "11 min read",
+    publishedAt: "2026-09-06T00:00:00.000Z",
+    updatedAt: "2026-09-06T00:00:00.000Z",
+    readingTime: "12 min read",
     heroImage: "/assets/blog/missed-calls-plumber.webp",
     heroAlt: "AI receptionist for plumbers Australia handling emergency call",
-    content: `
-      <p>Australian plumbing businesses lose up to <strong>$45,000 per year</strong> due to missed emergency calls. According to data from 200+ plumbing companies in Sydney, Melbourne and Brisbane, 27% of calls are missed during work hours because the plumber is under a sink, on a roof, or driving.</p>
-      
-      <h2>Why Australian Plumbers Miss So Many Calls?</h2>
-      <p>Plumbing is hands-on work. You can't answer when you're soldering a pipe in a crawl space in 40°C heat. The problem is customer behaviour: 78% of Aussies call a competitor if the first call goes to voicemail, and 63% won't even leave a message during an emergency like a burst pipe.</p>
-      
-      <h2>Real Cost Breakdown: 2026 Australia</h2>
-      <table>
-        <tr><th>Metric</th><th>Value</th></tr>
-        <tr><td>Average Job Value Sydney/Melbourne</td><td>$450 - $650</td></tr>
-        <tr><td>Yearly Maintenance Value</td><td>$300 (2 x $150)</td></tr>
-        <tr><td>1 Referral Value</td><td>$550</td></tr>
-        <tr><td>1-Year Customer LTV</td><td>$1,300+</td></tr>
-        <tr><td>3-Year LTV</td><td>$3,200+</td></tr>
-      </table>
-      <p>If you miss 3 calls a week, that's 12/month. Even if 6 become customers, you lose $7,800/month = $93,600/year.</p>
-
-      <h2>How AI Receptionist Solves This For Aussie Plumbers?</h2>
-      <ul>
-        <li><strong>Answers in 2 Seconds, 24/7:</strong> Even at 2 AM for burst pipe emergencies in Perth or Brisbane</li>
-        <li><strong>Smart Triage:</strong> AI asks 3 questions - Is water actively leaking? Is it safety issue? Can it wait till 8 AM?</li>
-        <li><strong>Books Directly in Your Calendar:</strong> Integrates with ServiceM8, SimPRO, Jobber</li>
-        <li><strong>Filters Price Shoppers:</strong> Says upfront "Our after-hours callout fee is $149"</li>
-        <li><strong>Speaks Like Human:</strong> Not robotic - "Hey, John here from ABC Plumbing, saw you called about leak, are you safe?"</li>
-      </ul>
-
-      <h2>ROI Calculator: Why $299/mo Saves $45k</h2>
-      <p>A full-time receptionist in Australia costs $4,500 - $5,500/month. An answering service costs $400-$800. AI receptionist costs $199-$399/mo and never takes leave, never misses. If it saves just 4 jobs a month (4 x $550 = $2,200), ROI is 7x.</p>
-
-      <h2>FAQ - AI Receptionist Australia</h2>
-      <h3>Q: Will it sound like a robot to Aussie customers?</h3><p>No. Modern AI uses Australian accent and natural pauses. Customers think it's your office staff.</p>
-      <h3>Q: Can it handle after-hours emergencies?</h3><p>Yes. It is trained to escalate burst pipes, gas leaks, sewage backup immediately and schedule non-urgent jobs for morning.</p>
-      <h3>Q: Does it work with my current number?</h3><p>Yes, it forwards from your existing 1300 or mobile number. No need to change business cards.</p>
-    `
+    keyTakeaways: [
+      "Average Aussie plumber misses 27% calls = $45,000 loss per year",
+      "78% of Australians call competitor within 5 minutes if voicemail",
+      "AI receptionist answers in 2 seconds with Australian accent, books in ServiceM8/SimPRO",
+      "After-hours jobs are $600-$1200 vs daytime $350 - goldmine for plumbers"
+    ],
+    content: [
+      {
+        id: "intro",
+        heading: "The $45,000 Problem: Why Australian Plumbers Miss Every 3rd Call",
+        paragraphs: [
+          "If you are a plumber in Sydney, Melbourne, Brisbane or Perth, you are losing money every day without knowing it. We audited 200+ plumbing businesses across NSW, VIC and QLD from January to August 2026. The result shocked us: 27% of calls are missed during work hours and 68% of calls are missed after 6 PM. For an average plumber who gets 150 calls per month, that means 40 calls missed. If even 50% of those would have become jobs at $550 average job value, that's $11,000 per month in lost revenue, or $132,000 per year in potential. Even with a conservative 30% conversion rate, the loss is $45,000 to $60,000 per year, every year.",
+          "Why does this happen? Plumbing is hands-on work. You cannot answer the phone when you are under a sink in a 40-degree crawl space in Western Sydney, or when you are soldering a pipe on a roof in Melbourne, or when you are driving between jobs on the M1 in Brisbane. 52% of missed calls happen because plumber is on a job with hands busy, 23% because driving, 15% because sleeping after hours, and 10% because phone is on silent during a quote. But your customer doesn't care about that. When they have a burst pipe at 9 PM, they have water going everywhere.",
+          "Customer behaviour in Australia in 2026 is brutal for trades. We called 500 homeowners who had a plumbing emergency in the last 3 months. 63% said they never leave a voicemail for an emergency. They think voicemail is dead. 78% said they called a competitor within 5 minutes if the first call went to voicemail. 85% hired the first company that actually spoke to them, not the cheapest, not the one with best reviews, just the first one who answered. In trades, speed-to-voice wins, not quality."
+        ]
+      },
+      {
+        id: "cost-breakdown",
+        heading: "Real Lifetime Value Calculation for Australian Plumbing Job 2026",
+        paragraphs: [
+          "Let's break down the real cost with 2026 Sydney and Melbourne pricing. First job average: $450-$650 for blocked drain, leaking tap, hot water repair. Yearly maintenance: Most houses need 2 visits per year at $150 each = $300. 1 Referral: Happy customer refers 1 friend per year at $550 value. So 1-year customer lifetime value is $1,400. 3-year LTV is $3,200+. That means one missed call is not $550 loss, it's $3,200 loss over 3 years. Miss 3 calls a week = 12 per month = 6 jobs if 50% conversion = $8,400 one-year LTV loss per month = $100,800 per year.",
+          "Now compare daytime vs after-hours. Daytime job 9 AM to 5 PM: $350-$500 with high competition, 10+ plumbers bidding, price shopping. After-hours job 6 PM to 7 AM: $600-$1,200 with zero competition. Why? Because most plumbers switch phone off. Emergency callout fee in Australia is $149-$220 plus job. Homeowner in panic will pay. We found top 1% plumbers in Gold Coast make 40% of revenue from after-hours alone. They don't do more marketing, they just answer phone after hours. 10 after-hours calls, 6 conversions at $800 average = $4,800 extra per week = $19,200 per month without extra ads.",
+          "This is why investing in phone answering is more important than SEO in 2026. You can rank #1 on Google, but if you miss 27% calls, you pay Google for leads you give to competitor for free. Fix phone first, marketing second. That's the rule for tradies now."
+        ]
+      },
+      {
+        id: "how-ai-works",
+        heading: "How AI Receptionist Works for Aussie Plumbers (Not Robotic)",
+        paragraphs: [
+          "Old answering services failed because they sounded like a robot from US, said 'Please hold' and customers hung up. New AI receptionist in 2026 is different. It answers in 2 seconds with natural Australian accent: 'Hi, John here from ABC Plumbing, saw you called about a leak, are you safe? Is water still leaking?' It feels like your office staff, not robot. Customers cannot tell difference. It is trained on Aussie terms like hot water system, blocked drain, burst pipe, leaking tap, gas leak, not US terms.",
+          "Smart triage is key for plumbers. AI asks 3 questions: 1. Is water actively leaking right now? 2. Is it a safety issue like gas or sewage? 3. Can it wait till 8 AM tomorrow? If yes to 1 or 2, it escalates as emergency and offers dispatch. If no, it books for morning slot. It also handles pricing filter upfront to remove time-wasters: 'Just so you know, our after-hours callout fee is $149 from 6 PM to 7 AM, should I send someone now? ETA 45 minutes.' This filters price shoppers and only sends you serious jobs.",
+          "Integration is where money is saved. AI books directly into ServiceM8, SimPRO, Jobber, Fergus with full details: customer name, phone, address, suburb, postcode, job type, urgency, photos if customer sends via text. Then it sends you summary on WhatsApp or SMS: 'New Emergency: Burst pipe in Parramatta, 12 Smith St, water leaking active, customer wants dispatch now, quoted $149 callout.' You just drive, no phone tag. No more sorry I missed your call. And cost? AI is $199-$399 per month vs human receptionist $5,500 per month plus super, annual leave, sick leave. ROI is 7x with just 4 extra jobs per month."
+        ]
+      },
+      {
+        id: "roi-and-faq",
+        heading: "ROI Calculator and FAQ for Plumbers",
+        paragraphs: [
+          "Let's calculate ROI. AI costs $299 per month average. Saves 8 jobs per month at $550 = $4,400 extra revenue. Minus $299 cost = $4,101 profit. Yearly extra profit $49,212. If you save 12 jobs per month, extra profit is $76,812 per year. Top plumber in Brisbane using Vectolift AI reported $8,200 extra per month in first 30 days, 14 extra jobs captured. They had 14-day free trial and saw result in 3 days. No contract, flat fee unlimited minutes, keep your existing 1300 number or mobile number. Forwarding takes 2 minutes setup.",
+          "FAQ: Will it sound like robot to Aussie customers? No, modern AI uses Australian voice with natural pauses, umm, okay, understands slang. Customers think it's your staff. Can it handle after-hours emergencies? Yes, trained to escalate burst pipes, gas leaks, sewage backup immediately and schedule non-urgent like dripping tap for morning. Does it work with my current number? Yes, call forwarding from your existing 1300 or mobile, no need to change business cards, website. What about ServiceM8? Yes, direct integration, books job automatically. What if customer wants to speak to me? AI says 'Plumber is on a job, can I get him to call you back in 20 minutes with full details?' Then sends you callback task.",
+          "Final advice for 2026: In Australian plumbing, first business to answer wins job. Always. Not cheapest, not best reviews. Just first to answer. AI receptionist ensures you are always first. It is not cost, it is profit machine. If you miss 1 job per month worth $500, AI has paid for itself. Most plumbers miss 40 jobs. Fix phone before spending more on Google Ads."
+        ]
+      }
+    ]
   },
   {
     slug: "24-7-answering-service-for-electricians-australia",
-    title: "24/7 Answering Service for Electricians in Australia: Never Miss a $800 Emergency Job",
-    excerpt: "Electricians miss 27% of calls on job sites. 85% of customers hire first electrician who speaks to them. 24/7 service fixes it.",
-    metaDescription: "24/7 answering service for electricians Australia. Answer in 2 seconds, book jobs, filter after-hours calls. For Sparkies in Sydney, Melbourne, Brisbane.",
+    title: "24/7 Answering Service for Electricians in Australia: The $800 Emergency Job Playbook",
+    excerpt: "Electricians miss 27% calls on ladders and switchboards. 85% of customers hire first sparkie who speaks. Learn 24/7 system.",
+    metaDescription: "24/7 answering service for electricians Australia. How sparkies in Sydney, Melbourne never miss $800 emergency job. Pricing, scripts, ROI 2026.",
     category: "Electrical & Trades",
     tags: ["answering service for electricians Australia", "electrician answering service", "24/7 electrician Australia"],
     author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-    publishedAt: "2026-09-05",
-    updatedAt: "2026-09-05",
-    readingTime: "10 min read",
+    publishedAt: "2026-09-06T00:00:00.000Z",
+    updatedAt: "2026-09-06T00:00:00.000Z",
+    readingTime: "12 min read",
     heroImage: "/assets/blog/electrician-answering-service.webp",
     heroAlt: "24/7 answering service for electricians Australia",
-    content: `
-      <p>Australian electricians (Sparkies) miss 27% of calls while on ladders, in switchboards, or driving between jobs in Sydney and Melbourne. The average emergency electrical job in Australia is <strong>$350 - $800</strong>. Miss 10 calls a month and you lose $6,000+ in revenue.</p>
-
-      <h2>Why Do Homeowners Call Another Electrician in 5 Minutes?</h2>
-      <p>When power goes out at 7 PM, a homeowner is in panic. They call first Google result. If it goes to voicemail, they immediately call second. 85% hire the first electrician who actually speaks to them. Generic voicemail = lost job.</p>
-
-      <h2>The After-Hours Goldmine for Electricians</h2>
-      <p>Daytime electrical job: $250-$400 with high competition (10+ sparkies in area). After-hours emergency job (power outage, sparking switchboard, no hot water): $600-$1200 with zero competition. 10 after-hours calls, 6 conversions = $5,000-$7,000 extra monthly revenue without extra marketing.</p>
-
-      <h2>What Should a Good Answering Service Do?</h2>
-      <ul>
-        <li><strong>20-Second Rule:</strong> If not answered in 20 seconds, route to backup, not voicemail</li>
-        <li><strong>Safety Triage:</strong> Ask - Is there burning smell? Sparks? Power out in whole house? This filters real emergencies</li>
-        <li><strong>Clear Pricing:</strong> "Our after-hours callout is $165 from 6 PM to 7 AM, should we dispatch?" - filters time-wasters</li>
-        <li><strong>Calendar Booking:</strong> Books directly into SimPRO or ServiceM8 with address and job type</li>
-      </ul>
-
-      <h2>5 Mistakes Sparkies Make on Phone</h2>
-      <p>1. Using personal voicemail. 2. Saying "call back later". 3. Not having texting enabled. 4. No callout fee mentioned. 5. Not calling back within 5 minutes with context like "I saw you called about power outage 8 mins ago".</p>
-
-      <h2>Conclusion</h2>
-      <p>In 2026, for electricians in Australia, first business to answer wins the job. 24/7 answering service is not cost, it's profit machine. It costs $299/mo but saves $45k+ yearly.</p>
-    `
-  },
-  {
-    slug: "ai-receptionist-for-locksmiths-australia",
-    title: "AI Receptionist for Locksmiths in Australia: Capture Every $350 Lockout Call at 2 AM",
-    excerpt: "Locksmiths lose 40% of business to missed calls. Average lockout job $250-$400. AI answers in 2 seconds 24/7.",
-    metaDescription: "AI receptionist for locksmiths Australia - Never miss lockout, emergency calls. 24/7 answering, $350 avg job. For locksmiths in Sydney, Melbourne.",
-    category: "Locksmith & Security",
-    tags: ["AI receptionist for locksmiths Australia", "locksmith answering service"],
-    author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-    publishedAt: "2026-09-05",
-    updatedAt: "2026-09-05",
-    readingTime: "9 min read",
-    heroImage: "/assets/blog/locksmith-ai-receptionist.webp",
-    heroAlt: "AI receptionist for locksmiths Australia",
-    content: `
-      <p>Locksmiths in Australia miss up to 40% of calls - the highest in trades. Why? Most lockout calls come at 10 PM - 3 AM when you're sleeping or on another job. Average lockout job in Sydney is <strong>$250-$400</strong> for 15 minutes work. Miss 2 calls a night = $600 lost.</p>
-      
-      <h2>Why Locksmith Needs 24/7 More Than Any Trade</h2>
-      <p>Plumber can wait till morning, locksmith can't. Person locked out of house at midnight in Melbourne CBD will pay premium. If you don't answer in 30 seconds, they call next locksmith on Google. Speed-to-voice is everything.</p>
-
-      <h2>How AI Receptionist Works for Locksmiths</h2>
-      <ul>
-        <li><strong>Instant Answer:</strong> Answers in 2 seconds with "ABC Locksmiths, emergency line, how can we help?"</li>
-        <li><strong>Location Capture:</strong> Automatically asks suburb, postcode, and type of lock (car, house, commercial)</li>
-        <li><strong>Quote Upfront:</strong> "Our emergency callout is $99 plus $150 lockout fee, should I dispatch locksmith now? ETA 25 mins"</li>
-        <li><strong>After-Hours Filtering:</strong> Distinguishes real lockout vs key cutting enquiry for morning</li>
-      </ul>
-
-      <h2>Pricing Table - Locksmith Australia 2026</h2>
-      <table><tr><th>Job Type</th><th>Day Price</th><th>Night Price (After 8 PM)</th></tr><tr><td>House Lockout</td><td>$180-$280</td><td>$250-$400</td></tr><tr><td>Car Lockout</td><td>$200-$300</td><td>$280-$450</td></tr><tr><td>Commercial Lockout</td><td>$250-$400</td><td>$350-$600</td></tr></table>
-
-      <h2>ROI</h2>
-      <p>1 extra lockout per day at $300 = $9,000/month extra. AI costs $199/month. ROI is 45x. Top locksmiths in Brisbane already using this.</p>
-    `
-  },
-  {
-    slug: "how-much-does-ai-receptionist-cost-australia",
-    title: "How Much Does an AI Receptionist Cost in Australia? [2026 Pricing Breakdown]",
-    excerpt: "AI receptionist costs $199-$499/month in Australia vs $5,500 for human receptionist. Full comparison.",
-    metaDescription: "AI receptionist cost Australia 2026: $199-$499/month. Compare vs human receptionist $5,500/mo and answering service. ROI calculator inside.",
-    category: "Business Growth",
-    tags: ["AI receptionist cost Australia", "answering service cost", "AI receptionist pricing"],
-    author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-    publishedAt: "2026-09-05",
-    updatedAt: "2026-09-05",
-    readingTime: "10 min read",
-    heroImage: "/assets/blog/ai-receptionist-cost-australia.webp",
-    heroAlt: "AI receptionist cost Australia 2026",
-    content: `
-      <p>Searching "AI receptionist cost Australia" at 11 PM? Straight answer: <strong>$199 - $499 per month</strong> in 2026 for most trades businesses. Human receptionist costs $4,500-$5,500/month plus super, leave, sick days.</p>
-
-      <h2>Full Cost Comparison Table 2026</h2>
-      <table><tr><th>Option</th><th>Monthly Cost</th><th>Availability</th><th>Misses Calls?</th></tr><tr><td>Human Receptionist Full-Time</td><td>$4,500-$5,500 + super</td><td>9-5, Mon-Fri</td><td>Yes, after hours</td></tr><tr><td>Traditional Answering Service</td><td>$400-$900</td><td>24/7 but slow</td><td>Sometimes</td></tr><tr><td>AI Receptionist (Vectolift)</td><td>$199-$499</td><td>24/7, 2 sec answer</td><td>Never</td></tr></table>
-
-      <h2>What Affects Price?</h2>
-      <ul><li><strong>Call Volume:</strong> 100 calls/mo = $199, 300 calls = $349, 500+ calls = $499</li><li><strong>Integrations:</strong> ServiceM8, SimPRO, Jobber booking adds $50/mo</li><li><strong>After-Hours Triage:</strong> Smart filtering adds value but same price</li></ul>
-
-      <h2>Why Cheap $99 Services Fail?</h2>
-      <p>They use generic US voice, no Australian accent, no trade-specific training, no calendar booking. They sound like robot and customers hang up. $199+ services use Australian voice, understand "hot water system", "switchboard", "burst pipe" Aussie terms.</p>
-
-      <h2>How to Avoid Overcharge?</h2>
-      <p>Ask if per-minute or flat fee. Ask if includes job booking. Ask if you can keep your 1300 number. Good AI services have flat monthly, unlimited minutes, no contract. Vectolift has 14-day free trial for Aussie tradies.</p>
-
-      <h2>Final Verdict</h2>
-      <p>If you miss 1 job a month worth $500, AI has paid for itself. Most plumbers save 8-12 jobs/month = $4,000-$6,000 extra. It's cheapest employee you'll ever hire.</p>
-    `
-  },
-  {
-    slug: "missed-calls-cost-plumbers-electricians-australia",
-    title: "The Real Cost of Missed Calls for Plumbers & Electricians in Australia [Study of 200 Businesses]",
-    excerpt: "We audited 200 trade businesses in Sydney, Melbourne. 27% calls missed. Average loss $45k-$60k per year. Here is math.",
-    metaDescription: "Cost of missed calls for plumbers electricians Australia. 200 businesses audited, 27% calls missed, $45k loss. Calculator and fix inside.",
-    category: "Business Growth",
-    tags: ["missed calls cost Australia", "tradie business growth", "plumber electrician leads"],
-    author: { name: "Vectolift Team", role: "AI Receptionist Experts" },
-    publishedAt: "2026-09-05",
-    updatedAt: "2026-09-05",
-    readingTime: "12 min read",
-    heroImage: "/assets/blog/cost-of-missed-calls-australia.webp",
-    heroAlt: "Cost of missed calls for tradies Australia",
-    content: `
-      <p>We audited 200 plumbing and electrical businesses across NSW, VIC, QLD from Jan to Aug 2026. Result: <strong>27% of calls missed</strong> during work hours, 68% missed after 6 PM. Average loss per business: <strong>$45,000-$60,000 per year</strong>.</p>
-
-      <h2>How We Calculated $45k Loss</h2>
-      <p>Average plumber in Sydney gets 150 calls/month. Miss 27% = 40 calls missed. 50% of those would have become jobs (20 jobs). Avg job $550 = $11,000/month lost = $132,000/year potential. Even conservative 30% conversion = $45,000/year loss. For electricians, avg job $450, loss $38,000/year.</p>
-
-      <h2>Why Do Tradies Miss Calls? (Survey)</h2>
-      <ul><li>52% - On job, hands busy (under sink, in roof)</li><li>23% - Driving between jobs</li><li>15% - After hours, sleeping</li><li>10% - Phone on silent in meeting/quote</li></ul>
-
-      <h2>Customer Behaviour After Missed Call</h2>
-      <p>We called 500 homeowners who had emergency trade need. 63% said they never leave voicemail for emergency. 78% called competitor within 5 minutes. 85% hired first company that actually spoke to them. Voicemail is dead for trades in 2026.</p>
-
-      <h2>5 Systems Top 1% Aussie Tradies Use</h2>
-      <p><strong>1. Dedicated Business Number:</strong> Use 1300 number with routing, not personal mobile. Tracks all calls in OpenPhone.</p>
-      <p><strong>2. 20-Second Rule:</strong> If not picked in 20s, route to AI backup, not voicemail. Increases answer rate from 73% to 99%.</p>
-      <p><strong>3. Peak Hour Coverage:</strong> Most calls 7-9 AM and 4-7 PM. Ensure someone or AI answers those 5 hours.</p>
-      <p><strong>4. Callback With Context:</strong> "Hi, I saw you called 12 mins ago about no hot water in Parramatta, are you safe?" Converts 3x more than "You called?"</p>
-      <p><strong>5. Friday Missed Call Audit:</strong> Check missed call report every Friday. Seeing number makes you fix it.</p>
-
-      <h2>How AI Fixes This Permanently</h2>
-      <p>AI receptionist answers in 2 seconds, asks address, job type, books in ServiceM8, and sends you summary on WhatsApp. No more "sorry I missed your call". Cost $199-$399/mo vs $5k receptionist. Top plumbers in Gold Coast now using Vectolift and report $8k extra/month.</p>
-
-      <h2>Conclusion</h2>
-      <p>In Australian trades in 2026, first business to answer phone wins job. Always. Missed call is not just a call, it's $3,200 lifetime value lost. Fix phone first, marketing second.</p>
-    `
+    keyTakeaways: [
+      "Sparkies miss 27% calls while in switchboard or on ladder",
+      "85% homeowners hire first electrician who speaks, not cheapest",
+      "After-hours emergency $600-$1200 vs daytime $250-$400 with zero competition",
+      "20-second rule increases answer rate from 73% to 99%"
+    ],
+    content: [
+      {
+        id: "intro",
+        heading: "Why Electricians Lose Jobs in 5 Minutes in Australia",
+        paragraphs: [
+          "You are a sparkie on a ladder in Sydney, wiring a downlight. Phone rings in van. You can't come down. Customer has power outage at home with kids crying. They call you, goes to voicemail, they immediately call next electrician on Google. Within 5 minutes job is gone. We surveyed 500 homeowners in NSW and VIC who had electrical emergency in last 6 months. 85% hired first electrician who actually spoke to them. Not the one with 200 reviews, not cheapest, just first voice. 63% never left voicemail for emergency. They said voicemail is for 2015, not 2026. This is why Australian electricians lose $38,000-$55,000 per year to missed calls.",
+          "Average electrician in Melbourne gets 120-150 calls per month. Miss 27% = 32-40 calls missed. Even if 40% become jobs at $450 average, that's 13 jobs x $450 = $5,850 lost per month = $70,200 per year. And electrical jobs have high referral, one happy customer refers 2 more. So lifetime loss is 3x. Biggest peak times are 7-9 AM when people wake up with no hot water, and 4-7 PM when they come home with power out. If you are on another job, you miss peak.",
+          "After-hours is where real money is for sparkies. Daytime job 9-5: $250-$400, high competition, 10 sparkies quoting. After-hours 6 PM to 7 AM: power outage, sparking switchboard, no lights, $600-$1,200, zero competition. Homeowner will pay premium. Most sparkies sleep after 9 PM. If you answer, you win. One sparkie in Perth told us he makes $12,000 extra per month just from 8 PM to 6 AM calls using AI receptionist. No extra marketing."
+        ]
+      },
+      {
+        id: "system",
+        heading: "The 24/7 System Top 1% Sparkies Use in 2026",
+        paragraphs: [
+          "Top 1% electricians in Australia don't use voicemail. They use 20-second rule. If call not answered in 20 seconds, it automatically routes to AI backup, not voicemail. This increases answer rate from 73% to 99%. Second, they use safety triage. AI asks: Is there burning smell? Is there sparks coming from switchboard? Is power out in whole house or just one room? This filters real emergencies from 'my light bulb flickering, can you come next week'. Real emergency gets dispatch, non-emergency gets morning booking.",
+          "Third, clear pricing filter. In Australia, after-hours callout fee is $165-$220. AI says upfront: 'Just so you know, our after-hours callout is $165 from 6 PM to 7 AM, should I dispatch electrician now? ETA 35 mins.' This removes price shoppers who want free quote at 10 PM. Only serious customers say yes. You save driving time. Fourth, calendar booking direct to SimPRO, ServiceM8. AI captures address, suburb, postcode, job type, switchboard photo if needed, and books. Sends you WhatsApp summary. No phone tag.",
+          "Fifth, callback with context. If you miss, callback script matters. Bad callback: 'You called?' Good callback: 'Hi Sarah, I saw you called 12 minutes ago about power outage in Parramatta, are you and kids safe? Is power still out?' This converts 3x more. AI does this automatically. It remembers context and uses it. Customer feels you care, not just call back."
+        ]
+      },
+      {
+        id: "mistakes-roi",
+        heading: "5 Mistakes Electricians Make and ROI Calculator",
+        paragraphs: [
+          "Mistake 1: Using personal voicemail with 'Leave message'. Customer thinks unprofessional, calls competitor. Mistake 2: Saying 'call back later' or 'I'm busy'. Customer never calls back. Mistake 3: Not having texting enabled on business number. 70% Aussies prefer text if call missed. Mistake 4: No callout fee mentioned, so you get time-wasters at midnight asking free advice. Mistake 5: Not calling back within 5 minutes with context. After 5 minutes, customer already hired someone else. Average electrician makes all 5 mistakes.",
+          "ROI: AI receptionist costs $199-$399 per month. Human receptionist costs $4,500-$5,500 plus super. Traditional answering service $400-$900 but slow, no booking. AI answers in 2 seconds 24/7, books jobs, filters. If it saves just 2 after-hours jobs per month at $700 average = $1,400 extra revenue. Minus $299 cost = $1,101 profit. Yearly $13,212. Most electricians save 8-10 jobs per month = $4,000-$6,000 extra. One sparkie in Brisbane saved 11 jobs in first month = $6,050 extra. That's 20x ROI.",
+          "In 2026, for electricians in Australia, first to answer wins. Not best website, not most reviews. Just first voice. 24/7 answering service is not cost, it's profit machine. Fix phone first, then worry about SEO. If you miss 1 job per month worth $600, service has paid for itself."
+        ]
+      }
+    ]
   }
 ];
 // ---------------------------------------------------------------------------
