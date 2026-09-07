@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-09-06",
     updatedAt: "2026-09-06",
     readingTime: "12 min read",
-    heroImage: "/assets/blog/missed-calls-plumber.webp",
+    heroImage: "/assets/blog/plumber-australia.webp",
     heroAlt: "AI receptionist for plumbers Australia",
     keyTakeaways: ["27% daytime missed = $45k loss/year", "78% call competitor in 5 mins if voicemail", "After-hours $600-$1200 = 3x profit", "AI answers in 2 sec Aussie accent 24/7", "ROI 7x - $299 saves 14 jobs"],
     content: [
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-09-06",
     updatedAt: "2026-09-06",
     readingTime: "12 min read",
-    heroImage: "/assets/blog/electrician-answering-service.webp",
+    heroImage: "/assets/blog/electrician-australia.webp",
     heroAlt: "24/7 answering service for electricians Australia",
     keyTakeaways: ["27% missed on ladder = $70k/year loss", "85% hire first who speaks", "After-hours $600-$1200 high profit", "20 sec rule 73% to 99% answer", "AI $299 saves $6k/mo extra"],
     content: [
@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-09-06",
     updatedAt: "2026-09-06",
     readingTime: "12 min read",
-    heroImage: "/assets/blog/ai-receptionist-cost-australia.webp",
+    heroImage: "/assets/blog/ai-receptionist-guide.webp",
     heroAlt: "AI receptionist cost Australia pricing guide",
     keyTakeaways: ["AI $199-$499 vs Human $5500 + super", "Flat unlimited best avoid $1.50/min trap $900/mo", "Cheap $99 robotic loses $5000 jobs", "1 job $550 pays for AI 8-12 jobs = $48k-$72k/year"],
     content: [
