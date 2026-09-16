@@ -1,1 +1,1 @@
-export const SITE_ORIGIN = (process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "").replace(/\/$/, "");
+export const SITE_ORIGIN = "https://www.vectolift.com"
