@@ -98,7 +98,7 @@ export default async function BlogArticlePage({ params }: Props) {
   const related = getRelatedPosts(slug, 2);
   const origin = SITE_ORIGIN;
 
-  const structuredData = [
+  const structuredData: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -128,6 +128,22 @@ export default async function BlogArticlePage({ params }: Props) {
       ],
     },
   ];
+
+  // Add FAQPage schema if the post has FAQ data
+  if (post.faqSchema && post.faqSchema.length > 0) {
+    structuredData.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: post.faqSchema.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900 [font-family:avantt,_'avantt_Fallback',_system-ui,_sans-serif]">
