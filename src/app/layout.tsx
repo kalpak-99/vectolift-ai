@@ -16,20 +16,30 @@ export const metadata: Metadata = {
   description: defaultDescription,
   keywords: [
     "AI Receptionist",
+    "AI receptionist Australia",
     "Voice AI",
     "Home Services AI",
     "AI Call Answering",
     "Trade Business AI",
     "Australian Voice AI",
+    "AI receptionist for tradies",
   ],
+  alternates: {
+    canonical: absoluteUrl("/"),
+    languages: { "en-AU": absoluteUrl("/") },
+  },
   robots: {
     index: true,
     follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large" as const,
+    "max-video-preview": -1,
   },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
     locale: "en_AU",
+    url: absoluteUrl("/"),
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
   twitter: {
@@ -75,7 +85,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   ];
 
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <body>
         <script
           type="application/ld+json"
