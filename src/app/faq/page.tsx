@@ -28,26 +28,36 @@ const faqs = [
       "Missed calls often become missed jobs, especially in service businesses where customers call the next available provider. Vectolift helps prevent that loss by answering instantly, including after hours and during busy periods.",
   },
   {
-    question: "Does Vectolift work for small businesses?",
+    question: "What trades does Vectolift work best for?",
     answer:
-      "Yes. Vectolift is built for home-service and trades businesses such as plumbing, electrical, HVAC, cleaning, landscaping, and repair teams that rely on phone calls to win work.",
+      "Vectolift is built for Australian home service businesses including plumbers, electricians, HVAC and air conditioning, pest control, locksmiths, landscapers, cleaners, and other trades that rely on phone calls to book jobs.",
   },
   {
     question: "Which CRM platforms can Vectolift integrate with?",
     answer:
-      "Vectolift can connect call transcripts, booking information, and action items with platforms such as Salesforce, HubSpot, and custom CRM systems, depending on the setup required for your business.",
+      "Vectolift integrates with calendar tools such as Cal.com and Google Calendar, so booked appointments land directly on your schedule. For other tools and CRM platforms, reach out to discuss your specific setup requirements.",
   },
   {
-    question: "Is there a free trial?",
+    question: "Does Vectolift offer a free trial?",
     answer:
-      "Vectolift offers a 7-day trial so businesses can test call answering, lead capture, appointment booking, and CRM workflows before committing.",
+      "Yes. Vectolift offers a 7-day free trial so you can test the AI receptionist with your real business calls before committing to a plan.",
   },
+  {
+    question: "Can Vectolift detect emergencies like a burst pipe or gas leak?",
+    answer:
+      "Yes. Vectolift's AI is designed to recognise emergency situations — such as burst pipes, gas leaks, or power outages — and immediately notify you via SMS so you can respond quickly.",
+  },
+  {
+    question: "Does Vectolift use an Australian accent?",
+    answer:
+      "Yes. Vectolift uses ElevenLabs voice technology to produce a natural-sounding Australian accent, so callers hear a friendly, local voice rather than a robotic or American-sounding system.",
+  }
 ];
 
 export const metadata = routeMetadata(
   "/faq",
-  "FAQ - Vectolift",
-  "Answers to common questions about Vectolift's AI receptionist and calling agent.",
+  "AI Receptionist FAQ — Common Questions for Trade Businesses | Vectolift",
+  "Answers to common questions about AI receptionists for Australian trade businesses. Learn about pricing, integrations, call handling, emergency detection, and the 7-day free trial."
 );
 
 export default function FAQPage() {
@@ -63,9 +73,29 @@ export default function FAQPage() {
     publisher: { "@type": "Organization", name: "Vectolift", url: SITE_ORIGIN },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_ORIGIN,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "FAQ",
+        item: absoluteUrl("/faq"),
+      },
+    ],
+  };
+
   return (
     <LegalShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="px-18 py-20 max-lg:px-6">
         <div className="mx-auto max-w-232">
           <p className="text-sm font-semibold uppercase tracking-[1.2px] text-primary">FAQ</p>

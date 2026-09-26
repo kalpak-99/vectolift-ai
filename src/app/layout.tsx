@@ -5,9 +5,9 @@ import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_ORIGIN, absoluteUrl } from "../lib/site";
 
-const defaultTitle = "Vectolift - Never Miss Another Call";
+const defaultTitle = "Vectolift — AI Receptionist for Australian Businesses | Never Miss a Call";
 const defaultDescription =
-  "Your AI receptionist answers every call, books jobs, and sounds like your best team member — 24/7, without missing a beat. Built for Australian home service businesses.";
+  "AI receptionist that answers every call 24/7, books jobs, and detects emergencies — with a natural Australian accent. Built for tradies and home service businesses. Try free for 7 days.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
@@ -15,14 +15,20 @@ export const metadata: Metadata = {
   title: defaultTitle,
   description: defaultDescription,
   keywords: [
-    "AI Receptionist",
+    "AI receptionist",
     "AI receptionist Australia",
-    "Voice AI",
-    "Home Services AI",
-    "AI Call Answering",
-    "Trade Business AI",
-    "Australian Voice AI",
+    "AI phone answering",
+    "AI answering service",
+    "virtual receptionist Australia",
+    "answering service for tradies",
+    "after-hours call answering",
+    "AI receptionist for plumbers",
+    "AI receptionist for electricians",
+    "AI receptionist for HVAC",
     "AI receptionist for tradies",
+    "missed call recovery",
+    "24/7 phone answering Australia",
+    "home services AI",
   ],
   alternates: {
     canonical: absoluteUrl("/"),
@@ -72,7 +78,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       name: SITE_NAME,
       url: `${SITE_ORIGIN}/`,
       logo: `${SITE_ORIGIN}/favicon.svg`,
-      description: "AI receptionist for Australian home service businesses",
+      description: "AI receptionist for Australian home service businesses. Answers calls 24/7 with a natural Australian accent, books appointments, and detects emergencies.",
+      email: "vectolift@gmail.com",
+      areaServed: {
+        "@type": "Country",
+        name: "Australia",
+        sameAs: "https://en.wikipedia.org/wiki/Australia",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "vectolift@gmail.com",
+        contactType: "sales",
+        availableLanguage: "English",
+        areaServed: "AU",
+      },
     },
     {
       "@context": "https://schema.org",
@@ -81,6 +100,28 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       name: SITE_NAME,
       url: `${SITE_ORIGIN}/`,
       publisher: { "@id": `${SITE_ORIGIN}/#organization` },
+      inLanguage: "en-AU",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Vectolift AI Receptionist",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: "AI receptionist that answers business calls 24/7 with a natural Australian accent, books appointments, detects emergencies, and sends SMS summaries.",
+      url: `${SITE_ORIGIN}/`,
+      provider: { "@id": `${SITE_ORIGIN}/#organization` },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceCurrency: "AUD",
+        description: "7-day free trial available",
+        areaServed: {
+          "@type": "Country",
+          name: "Australia",
+        },
+      },
+      featureList: "24/7 Call Answering, Emergency Detection, Australian Voice, Calendar Booking, Call Recording, Scalable Infrastructure",
     },
   ];
 

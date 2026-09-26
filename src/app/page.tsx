@@ -3,8 +3,8 @@ import HomePage from "./home-page";
 
 export const metadata = routeMetadata(
   "/",
-  "Vectolift - Never Miss Another Call",
-  "Your AI receptionist answers every call, books jobs, and sounds like your best team member — 24/7, without missing a beat. Built for Australian home service businesses.",
+  "Vectolift — AI Receptionist for Australian Businesses | Never Miss a Call",
+  "AI receptionist that answers every call 24/7, books jobs, and detects emergencies — with a natural Australian accent. Built for tradies and home service businesses. Try free for 7 days.",
 );
 
 export default function Page() {

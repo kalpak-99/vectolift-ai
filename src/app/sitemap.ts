@@ -4,7 +4,7 @@ import { getAllPosts } from "../lib/blog-data";
 
 export const dynamic = "force-static";
 
-const SITE_LAST_MODIFIED = "2026-09-23";
+const SITE_LAST_MODIFIED = "2026-09-24";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = getAllPosts().map((post) => ({
@@ -21,6 +21,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: SITE_LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 1.0,
+    },
+    {
+      url: absoluteUrl("/ai-receptionist-australia"),
+      lastModified: SITE_LAST_MODIFIED,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl("/ai-receptionist-for-tradies"),
+      lastModified: SITE_LAST_MODIFIED,
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: absoluteUrl("/blog"),

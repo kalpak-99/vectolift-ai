@@ -21,6 +21,9 @@ export default function SiteFooter({ className = "" }: { className?: string }) {
               <Link className="text-color-001/80 hover:text-primary transition-colors text-[13px]" href="/#customers">
                 Customers
               </Link>
+              <Link className="text-color-001/80 hover:text-primary transition-colors text-[13px]" href="/ai-receptionist-australia">
+                AI Receptionist
+              </Link>
               <a className="text-color-001/80 hover:text-primary transition-colors text-[13px]" href="mailto:vectolift@gmail.com">
                 Contact
               </a>
@@ -31,6 +34,9 @@ export default function SiteFooter({ className = "" }: { className?: string }) {
               <p className="text-primary [font-family:foundryGridnik,_'foundryGridnik_Fallback'] uppercase text-xs font-medium tracking-[1.2px]">
                 Resources
               </p>
+              <Link className="text-color-001/80 hover:text-primary transition-colors text-[13px]" href="/calculator">
+                Calculator
+              </Link>
               <Link className="text-color-001/80 hover:text-primary transition-colors text-[13px]" href="/blog">
                 Blog
               </Link>

@@ -26,6 +26,8 @@ export function GET() {
 ## Pages
 
 - [Home](${SITE_ORIGIN}/): Vectolift overview, benefits, customer examples, and contact call-to-action
+- [AI Receptionist Australia](${SITE_ORIGIN}/ai-receptionist-australia): AI receptionist for Australian businesses — features, pricing, and how it works
+- [AI Receptionist for Tradies](${SITE_ORIGIN}/ai-receptionist-for-tradies): AI receptionist built specifically for Australian trade businesses
 - [Calculator](${SITE_ORIGIN}/calculator): Interactive missed-call revenue calculator
 - [FAQ](${SITE_ORIGIN}/faq): Common questions about Vectolift and AI receptionists
 - [Blog](${SITE_ORIGIN}/blog): AI receptionist insights and guides for trade businesses
